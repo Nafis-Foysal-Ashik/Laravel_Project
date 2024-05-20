@@ -17,7 +17,7 @@ class taskController extends Controller
     {
         $tasks = tasks::all();
         $data=compact('tasks');
-        return view("welcome")->with($data);
+        return view("adminpage")->with($data);
     }
 
     public function store(Request $request)
@@ -146,7 +146,7 @@ class taskController extends Controller
         if (Auth::attempt($credentials)) {
             Session::flash('msg', 'Logged in Successfully');
             $tasks = tasks::all();
-            return view('welcome',compact('tasks'));
+            return view('adminpage',compact('tasks'));
         }
         Session::flash('msg', 'Something is wrong');
         return view('login');
@@ -164,7 +164,7 @@ class taskController extends Controller
         if (Auth::attempt($credentials)) {
             Session::flash('msg', 'Logged in Successfully');
             $tasks = tasks::all();
-            return view('welcome',compact('tasks'));
+            return view('adminpage',compact('tasks'));
         }
         Session::flash('msg', 'Something is wrong');
         return view('cutomer_login');
@@ -272,6 +272,8 @@ public function showAvailable()
         $file->move(public_path('uploads'), $filename);
         $available->picture = $filename;
     }
+    $available->division = $request['division'];
+    $available->work = $request['work'];
 
     $available->phone = $request['phone'];
     $available->address = $request['address'];
@@ -280,5 +282,107 @@ public function showAvailable()
 
     return redirect()->route('available')->with('success', 'Available information created successfully!');
 }
+
+//update available
+// public function updateavailable(Request $request)
+//     {
+//         $request->validate(
+//             [
+//                 // 'name'=>'required',
+//                 // 'work'=>'required',
+//                 // 'dueDate'=>'required'
+
+//                 'name'=>'required',
+//                 'phone'=>'required',
+//                 'mail'=>'required',
+//                 'division'=>'required',
+//                 'work'=>'required',
+//                 'dueDate'=>'required'
+//             ]
+//             );
+//             $id=$request['id'];
+//         $available =Available::find($id);
+//         $available->name=$request['name'];
+//         $available->phone=$request['phone'];
+//         $available->mail=$request['mail'];
+//         $available->division=$request['division'];
+//         $available->work=$request['work'];
+//         // $available->picture=$request->file('picture')->getClientOriginalName();
+//         // $request->file('picture')->move('uploads/',$available->picture);
+//         $available->dueDate=$request['dueDate'];
+//         $available->save();
+
+//         return redirect(route("homepage"));
+//     }
+
+    public function editavailable($id)
+{
+    $available = Available::find($id); // Correctly reference the model class
+    $data = compact('available');
+    return view("updateavailable")->with($data);
+}
+
+
+
+public function deleteavailable($id)
+{
+    Available ::find($id)->delete();
+    return redirect(route("available"));
+}
+
+
+
+//bookint section
+public function avaialablebooking()
+{
+    $availables = Available::all();
+    return view('booking_employee', compact('availables'));
+}
+
+// public function bookNow(Request $request)
+// {
+//     $name = $request->input('name');
+//     $email = $request->input('email');
+
+//     // Redirect to the admin page with the data
+//     return redirect()->route('available')->with(['name' => $name, 'email' => $email]);
+// }
+
+// public function bookNow(Request $request)
+//     {
+//         $name = $request->input('name');
+//         $email = $request->input('email');
+
+//         // Store the data in the session
+//         session(['name' => $name, 'email' => $email]);
+
+//         // Redirect to the admin page
+//         return redirect()->route('availableUser');
+//     }
+
+//     public function adminPage()
+//     {
+//         return view('adminpage');
+//     }
+
+//message section
+
+public function message(Request $request)
+{
+    $name = $request->input('name');
+    $email = $request->input('email');
+
+    // Store the data in the session
+    session()->push('messages', ['name' => $name, 'email' => $email]);
+
+    return redirect()->route('availablebookingPage');
+}
+
+public function showMessages()
+{
+    $messages = session('messages', []);
+    return view('message', compact('messages'));
+}
+
 
 }

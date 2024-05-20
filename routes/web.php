@@ -21,7 +21,26 @@ Route::get('/' , function(){
 
 Route::get('/available', [taskController::class, 'showAvailable'])->name('available'); // To display the available information
 Route::post('/available', [taskController::class, 'storeAvailable'])->name('available.store'); // To handle form submission
-Route::get('/ava', [taskController::class, 'avaialable'])->name("availablePage");
+Route::get('/availableUser', [taskController::class, 'avaialable'])->name("availablePage");
+
+//message section
+Route::post('/message', [TaskController::class, 'message'])->name('messagePage');
+Route::get('/message', [TaskController::class, 'showMessages'])->name('messagePage');
+
+
+//Booking
+Route::get('/availableUserbooking', [taskController::class, 'avaialablebooking'])->name("availablebookingPage");
+
+
+//booking
+//Route::post('/booknow', [taskController::class, 'bookNow'])->name('booknow');
+// Route::get('/adminpage', [taskController::class, 'adminPage'])->name('adminpage');
+
+Route::get('/editavailableuser/{id}', [taskController::class,'editavailable'])->name("editavailablepage");
+
+Route::post('/updateavailable',[taskController::class,'updateavaiable'])->name("updateavailablepage");
+
+Route::get('deleteavailable/{id}',[taskController::class,'deleteavailable'])->name("deleteavailablepage");
 
 
 Route::get('/show', [taskController::class,'show'])->name("showpage");
@@ -58,7 +77,7 @@ Route::post('/loginUser', [taskController::class, 'loginUser'])->name('loginUser
 Route::post('/customerlogin',[taskController::class, 'customerlogin']);
 
 
-
+//division
 Route::get('/khulna', [taskController::class , 'showKhulnaTasks'])->name("khulna");
 Route::get('/dhaka', [taskController::class , 'showDhakaTasks'])->name("dhaka");
 Route::get('/rajshahi', [taskController::class , 'showRajshahiTasks'])->name("rajshahi");

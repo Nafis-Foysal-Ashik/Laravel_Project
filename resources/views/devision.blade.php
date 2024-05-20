@@ -17,7 +17,7 @@
         <tr>
             <th>Name</th>
             <th>Work</th>
-            <th>Due Date</th>
+            <th>Dead-Line</th>
             <th>Picture</th>
         </tr>
     </thead>

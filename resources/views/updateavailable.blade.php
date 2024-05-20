@@ -28,14 +28,55 @@
 @section('main-section')
 <div class="container">
     <div class="d-flex justify-content-between align-items-center my-5">
-        <h2>Update Task</h2>
+        <h2>Update {{ $available->fullname }} Status</h2>
         <a href="{{ route('homepage') }}" class="btn btn-custom">Back</a>
     </div>
 
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('updatepage') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('task.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
+
+                {{-- <div class="mb-3">
+                    <label for="picture" class="form-label">Upload Picture:</label> --}}
+                    {{-- @if($task->picture)
+                        <div class="mb-3">
+                            <img src="{{ asset('uploads/' . $task->picture) }}" alt="Current Picture" class="img-thumbnail" style="max-width: 150px;">
+                        </div>
+                    @endif --}}
+                    {{-- <input type="file" class="form-control" id="picture" name="picture" value="<img src="{{ asset('uploads/' . $available->picture) }}>
+                </div> --}}
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" name="name" class="form-control" id="name" value="{{ $available->fullname }}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="text" name="phone" class="form-control" id="phone" value="{{ $available->phone }}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="mail" class="form-label">E-mail</label>
+                    <input type="email" name="mail" class="form-control" id="mail" value="{{ $available->email }}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="division" class="form-label">Division</label>
+                    <input type="text" name="division" class="form-control" id="division" value="{{ $available->division }}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="work" class="form-label">Work</label>
+                    <input type="text" name="work" class="form-control" id="work"  value="{{ $available->work }}">
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="dueDate" class="form-label">Dead-Line</label>
+                    <input type="date" name="dueDate" class="form-control" id="dueDate">
+                </div>
 
                 <div class="mb-3">
                     <label for="picture" class="form-label">Upload Picture:</label>
@@ -44,41 +85,11 @@
                             <img src="{{ asset('uploads/' . $task->picture) }}" alt="Current Picture" class="img-thumbnail" style="max-width: 150px;">
                         </div>
                     @endif --}}
-                    <input type="file" class="form-control" id="picture" name="picture" value="<img src="{{ asset('uploads/' . $task->picture) }}>
+                    <input type="file" class="form-control" id="picture" name="picture" value="<img src="{{ asset('uploads/' . $available->picture) }}>
                 </div>
 
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" name="name" class="form-control" id="name" value="{{ $task->name }}">
-                </div>
-
-                <div class="mb-3">
-                    <label for="phone" class="form-label">Phone</label>
-                    <input type="text" name="phone" class="form-control" id="phone" value="{{ $task->phone }}">
-                </div>
-
-                <div class="mb-3">
-                    <label for="mail" class="form-label">E-mail</label>
-                    <input type="email" name="mail" class="form-control" id="mail" value="{{ $task->mail }}">
-                </div>
-
-                <div class="mb-3">
-                    <label for="division" class="form-label">Division</label>
-                    <input type="text" name="division" class="form-control" id="division" value="{{ $task->division }}">
-                </div>
-
-                <div class="mb-3">
-                    <label for="work" class="form-label">Work</label>
-                    <input type="text" name="work" class="form-control" id="work" value="{{ $task->work }}">
-                </div>
-
-                <div class="mb-3">
-                    <label for="dueDate" class="form-label">Dead-Line</label>
-                    <input type="date" name="dueDate" class="form-control" id="dueDate" value="{{ $task->dueDate }}">
-                </div>
-
-                <input type="hidden" name="id" value="{{ $task->id }}">
-                <button type="submit" class="btn btn-custom btn-lg mt-4">Update Task</button>
+                <input type="hidden" name="id" value="{{ $available->id }}">
+                <button type="submit" class="btn btn-custom btn-lg mt-4">Update</button>
             </form>
         </div>
     </div>

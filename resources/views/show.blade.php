@@ -20,7 +20,7 @@
                     <p class="card-text"><strong>E-Mail:</strong> {{ $task->mail }}</p>
                     <p class="card-text"><strong>Division:</strong> {{ $task->division }}</p>
                     <p class="card-text"><strong>Work:</strong> {{ $task->work }}</p>
-                    <p class="card-text"><strong>Due Date:</strong> {{ $task->dueDate }}</p>
+                    <p class="card-text"><strong>Dead-Line:</strong> {{ $task->dueDate }}</p>
                 </div>
             </div>
         </div>

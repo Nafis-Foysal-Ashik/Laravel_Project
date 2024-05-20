@@ -32,6 +32,18 @@
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password" required>
                 </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="text" class="form-control" id="phone" name="phone">
+                </div>
+                <div class="mb-3">
+                    <label for="division" class="form-label">Division</label>
+                    <input type="text" class="form-control" id="phone" name="division">
+                </div>
+                <div class="mb-3">
+                    <label for="work" class="form-label">Work</label>
+                    <input type="text" class="form-control" id="phone" name="work">
+                </div>
                 <div class="form-group mb-3">
                     <label for="picture" class="form-label">Upload Picture</label>
                     <input type="file" name="picture" class="form-control">
@@ -39,10 +51,7 @@
                         <span class="text-danger" role="alert"><strong>{{ $message }}</strong></span>
                     @enderror
                 </div>
-                <div class="mb-3">
-                    <label for="phone" class="form-label">Phone</label>
-                    <input type="text" class="form-control" id="phone" name="phone">
-                </div>
+
                 <div class="mb-3">
                     <label for="address" class="form-label">Address</label>
                     <input type="text" class="form-control" id="address" name="address">
@@ -51,6 +60,7 @@
                     <label for="rating" class="form-label">Rating</label>
                     <input type="text" class="form-control" id="rating" name="rating">
                 </div>
+
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>

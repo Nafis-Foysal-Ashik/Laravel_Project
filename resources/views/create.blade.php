@@ -58,7 +58,7 @@
           </div>
 
           <div class="form-group mb-3">
-            <label for="dueDate" class="form-label">Due Date</label>
+            <label for="dueDate" class="form-label">Dead-Line</label>
             <input type="date" name="dueDate" class="form-control">
             @error('dueDate')
               <span class="text-danger" role="alert"><strong>{{ $message }}</strong></span>

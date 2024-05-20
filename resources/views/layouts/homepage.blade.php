@@ -171,7 +171,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('available') }}">
+                <a class="nav-link collapsed" href="{{ route('availablebookingPage') }}">
                     <i class="bi bi-box-arrow-in-right"></i>
                     <span>Avaiable</span>
                 </a>
