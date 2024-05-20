@@ -152,6 +152,24 @@ class taskController extends Controller
         return view('login');
     }
 
+    public function customerlogin(Request $request)
+    {
+        // Validation
+        $request->validate([
+            'email' => 'required|string|email',
+            'password' => 'required|string',
+        ]);
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            Session::flash('msg', 'Logged in Successfully');
+            $tasks = tasks::all();
+            return view('welcome',compact('tasks'));
+        }
+        Session::flash('msg', 'Something is wrong');
+        return view('cutomer_login');
+    }
+
     public function showKhulnaTasks()
 {
     $tasks = tasks::where('division', 'Khulna')->get(); // Retrieve tasks with division Khulna from the database
@@ -159,10 +177,38 @@ class taskController extends Controller
     return view('khulna', compact('tasks')); // Pass tasks to the view
 }
 
-public function customer_register()
+public function showDhakaTasks()
 {
-    return view('customer_register');
+    $tasks = tasks::where('division', 'Dhaka')->get(); // Retrieve tasks with division Khulna from the database
+
+    return view('dhaka', compact('tasks')); // Pass tasks to the view
 }
+
+public function showRajshahiTasks()
+{
+    $tasks = tasks::where('division', 'Rajshahi')->get(); // Retrieve tasks with division Khulna from the database
+
+    return view('rajshahi', compact('tasks')); // Pass tasks to the view
+}
+
+public function showSylhetTasks()
+{
+    $tasks = tasks::where('division', 'Sylhet')->get(); // Retrieve tasks with division Khulna from the database
+
+    return view('sylhet', compact('tasks')); // Pass tasks to the view
+}
+
+public function showChottogramTasks()
+{
+    $tasks = tasks::where('division', 'Chottogram')->get(); // Retrieve tasks with division Khulna from the database
+
+    return view('chottogram', compact('tasks')); // Pass tasks to the view
+}
+
+// public function customer_register()
+// {
+//     return view('customer_register');
+// }
 
 public function avaiableuser()
 {

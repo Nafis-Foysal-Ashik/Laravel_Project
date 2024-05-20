@@ -7,14 +7,25 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap5.css">
+    <style>
+        body {
+            color: rgb(0, 183, 255);
+        }
+        .bg-sky-blue {
+            background-color: #04b8ff; /* Light sky blue color */
+        }
+        .header-text {
+            color: rgb(0, 183, 255);
+        }
+    </style>
     @stack('head')
 </head>
 <body>
 
-    <div class="bg-dark">
+    <div class="bg-sky-blue">
         <div class="container py-3">
             <div class="h1 text-white">
-                <marquee behavior="slide" direction="left">Task Management System</marquee>
+                <marquee behavior="slide" direction="left">Employee Task Management System</marquee>
             </div>
         </div>
     </div>

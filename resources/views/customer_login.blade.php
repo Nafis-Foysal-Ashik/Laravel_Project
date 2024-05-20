@@ -1,58 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create New Account</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        /* Additional CSS styles can be added here */
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="bg-dark">
-        <div class="container py-3">
-            <div class="h1 text-white">
-                <marquee behavior="slide" direction="left">Task Management System</marquee>
-            </div>
-        </div>
+  <div class="container-fluid d-flex flex-column h-100 p-0">
+    <div class="bg-image"></div>
+
+    <div class="content d-flex justify-content-center align-items-center h-100">
+      <div class="card shadow-lg p-5 bg-white rounded">
+        <h1 class="text-center mb-4">Login</h1>
+
+        @if(session('error'))
+          <div class="alert alert-danger">{{ session('error') }}</div>
+        @endif
+
+        <form method="POST" action="{{ route('customerLogin') }}">
+          @csrf <div class="form-group mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
+            @error('email')
+              <div class="text-danger">{{ $message }}</div>
+            @enderror
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+            @error('password')
+              <div class="text-danger">{{ $message }}</div>
+            @enderror
+          </div>
+
+          <div class="text-center mt-3">
+            <button type="submit" class="btn btn-primary">Customer Login</button>
+          </div>
+        </form>
+      </div>
     </div>
-    <section class="contact spad">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="text-center mb-4">
-                        <h2>Log In Customer Account</h2>
-                    </div>
-                    @if(session()->has('success'))
-                    <div class="alert alert-success">
-                        <p>{{ session()->get('success') }}</p>
-                    </div>
-                    <form action="/customerloginUser" method="post" enctype="multipart/form-data">
-                        @csrf
+  </div>
 
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="email" placeholder="Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" name="password" placeholder="Password" required>
-                        </div>
-                        <!-- Uncomment the following lines if you want to include a file input -->
-                        <!-- <div class="form-group">
-                            <input type="file" class="form-control-file" name="file" required>
-                        </div> -->
-                        <div class="text-center">
-                            <button type="submit" name="register" class="btn btn-primary">Sign Up</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bootstrap JS (optional, only needed if you require Bootstrap JavaScript features) -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>
+
+<style>
+  body {
+    background-color: #f5f5f5; /* Fallback color */
+  }
+
+  .bg-image {
+    /* Set background image URL and styles here */
+    background-image: url("path/to/your/image.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3; /* Adjust opacity as needed */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .content {
+    z-index: 1; /* Ensure content is displayed on top of background image */
+  }
+
+  .card {
+    border-radius: 10px; /* Add rounded corners */
+  }
+
+  .btn-primary {
+    transition: background-color 0.3s ease; /* Add hover effect */
+  }
+
+  .btn-primary:hover {
+    background-color: #0d6efd!important; /* Change hover color */
+  }
+
+  /* Add custom styles for text (optional) */
+  h1 {
+    font-family: sans-serif; /* Change font family */
+    font-weight: bold; /* Add bold weight */
+  }
+
+  .form-label {
+    font-weight: bold; /* Bold labels */
+  }
+</style>

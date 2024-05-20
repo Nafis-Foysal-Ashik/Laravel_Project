@@ -18,6 +18,9 @@
         <div class="h2">All Task</div>
         <br> <div class="d-flex gap-2"> <a href="{{ route("createpage") }}" class="btn btn-primary custom-btn">Add Task</a>
           <a href="{{ route("loginpage") }}" class="btn btn-primary custom-btn">Sign Up</a>
+          <a href="{{ route("available") }}" class="btn btn-primary custom-btn">Available User</a>
+          <a href="{{ route("availablePage") }}" class="btn btn-primary custom-btn">Add Available User</a>
+
         </div>
       </div>
 

@@ -2,24 +2,24 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    {{-- <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <meta content="" name="description">
-    <meta content="" name="keywords">
+    <meta content="" name="keywords"> --}}
 
     <!-- Favicons -->
-    <link href="{{ asset('import/assets/img/favicon.png" rel="icon') }}">
-    <link href="{{ asset('import/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    {{-- <link href="{{ asset('import/assets/img/favicon.png" rel="icon') }}">
+    <link href="{{ asset('import/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon"> --}}
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.gstatic.com" rel="preconnect">
+    {{-- <link href="https://fonts.gstatic.com" rel="preconnect">
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+        rel="stylesheet"> --}}
 
     <!-- Vendor CSS Files -->
     <link href="{{ asset('import/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -45,7 +45,7 @@
 <body>
 
     <!-- ======= Header ======= -->
-    <header id="header" class="header fixed-top d-flex align-items-center">
+    {{-- <header id="header" class="header fixed-top d-flex align-items-center">
 
         <nav class="header-nav ms-auto">
             <ul class="d-flex align-items-center">
@@ -61,7 +61,7 @@
                         <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span> --}}
                     </a><!-- End Profile Iamge Icon -->
 
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                    {{-- <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
                             <h6>Kevin Anderson</h6>
                             <span>Web Designer</span>
@@ -75,15 +75,15 @@
                                 <i class="bi bi-box-arrow-right"></i>
                                 <span>Sign Out</span>
                             </a>
-                        </li>
+                        </li> --}}
 
-                    </ul><!-- End Profile Dropdown Items -->
+                    {{-- </ul><!-- End Profile Dropdown Items -->
                 </li><!-- End Profile Nav -->
 
             </ul>
         </nav><!-- End Icons Navigation -->
 
-    </header><!-- End Header -->
+    </header><!-- End Header --> --}}
 
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
@@ -96,15 +96,6 @@
                     <span>Dashboard</span>
                 </a>
             </li><!-- End Dashboard Nav -->
-
-
-
-
-
-
-
-
-
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('loginpage') }}">
@@ -128,7 +119,12 @@
                 </a>
             </li>
 
-            <h1>Division</h1>
+            <li class="nav-item">
+                <a class="nav-link " href="{{ route('dashboard') }}">
+                    <i class="bi bi-grid"></i>
+                    <span>Division</span>
+                </a>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('khulna') }}">
@@ -137,10 +133,45 @@
                 </a>
             </li>
 
-            <h1>Not Booked</h1>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('dhaka') }}">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>Dhaka</span>
+                </a>
+            </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('khulna') }}">
+                <a class="nav-link collapsed" href="{{ route('rajshahi') }}">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>Rajshahi</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('sylhet') }}">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>Sylhet</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('chottogram') }}">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>Chottogram</span>
+                </a>
+            </li>
+
+
+
+            <li class="nav-item">
+                <a class="nav-link " href="{{ route('dashboard') }}">
+                    <i class="bi bi-grid"></i>
+                    <span>Not Booked</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('available') }}">
                     <i class="bi bi-box-arrow-in-right"></i>
                     <span>Avaiable</span>
                 </a>
@@ -176,7 +207,7 @@
                                 <div class="filter">
                                     <a class="icon" href="#" data-bs-toggle="dropdown"><i
                                             class="bi bi-three-dots"></i></a>
-                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                    {{-- <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                         <li class="dropdown-header text-start">
                                             <h6>Filter</h6>
                                         </li>
@@ -184,7 +215,7 @@
                                         <li><a class="dropdown-item" href="#">Today</a></li>
                                         <li><a class="dropdown-item" href="#">This Month</a></li>
                                         <li><a class="dropdown-item" href="#">This Year</a></li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
 
                                 <div class="card-body">
@@ -210,7 +241,7 @@
                         <div class="col-xxl-4 col-md-6">
                             <div class="card info-card sales-card">
 
-                                <div class="filter">
+                                {{-- <div class="filter">
                                     <a class="icon" href="#" data-bs-toggle="dropdown"><i
                                             class="bi bi-three-dots"></i></a>
                                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -222,7 +253,7 @@
                                         <li><a class="dropdown-item" href="#">This Month</a></li>
                                         <li><a class="dropdown-item" href="#">This Year</a></li>
                                     </ul>
-                                </div>
+                                </div> --}}
 
                                 <div class="card-body">
                                     <h5 class="card-title">Dhaka <span>| This Year</span></h5>
@@ -247,7 +278,7 @@
                         <div class="col-xxl-4 col-md-6">
                             <div class="card info-card sales-card">
 
-                                <div class="filter">
+                                {{-- <div class="filter">
                                     <a class="icon" href="#" data-bs-toggle="dropdown"><i
                                             class="bi bi-three-dots"></i></a>
                                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -259,7 +290,7 @@
                                         <li><a class="dropdown-item" href="#">This Month</a></li>
                                         <li><a class="dropdown-item" href="#">This Year</a></li>
                                     </ul>
-                                </div>
+                                </div> --}}
 
                                 <div class="card-body">
                                     <h5 class="card-title">Khulna <span>| This Year</span></h5>
@@ -284,7 +315,7 @@
                         <div class="col-xxl-4 col-md-6">
                             <div class="card info-card sales-card">
 
-                                <div class="filter">
+                                {{-- <div class="filter">
                                     <a class="icon" href="#" data-bs-toggle="dropdown"><i
                                             class="bi bi-three-dots"></i></a>
                                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -296,7 +327,7 @@
                                         <li><a class="dropdown-item" href="#">This Month</a></li>
                                         <li><a class="dropdown-item" href="#">This Year</a></li>
                                     </ul>
-                                </div>
+                                </div> --}}
 
                                 <div class="card-body">
                                     <h5 class="card-title">Sylhet <span>| This Year</span></h5>
@@ -321,7 +352,7 @@
                         <div class="col-xxl-4 col-md-6">
                             <div class="card info-card sales-card">
 
-                                <div class="filter">
+                                {{-- <div class="filter">
                                     <a class="icon" href="#" data-bs-toggle="dropdown"><i
                                             class="bi bi-three-dots"></i></a>
                                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -333,7 +364,7 @@
                                         <li><a class="dropdown-item" href="#">This Month</a></li>
                                         <li><a class="dropdown-item" href="#">This Year</a></li>
                                     </ul>
-                                </div>
+                                </div> --}}
 
                                 <div class="card-body">
                                     <h5 class="card-title">Rajshahi <span>| This Year</span></h5>
@@ -358,7 +389,7 @@
                         <div class="col-xxl-4 col-md-6">
                             <div class="card info-card sales-card">
 
-                                <div class="filter">
+                                {{-- <div class="filter">
                                     <a class="icon" href="#" data-bs-toggle="dropdown"><i
                                             class="bi bi-three-dots"></i></a>
                                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -370,7 +401,7 @@
                                         <li><a class="dropdown-item" href="#">This Month</a></li>
                                         <li><a class="dropdown-item" href="#">This Year</a></li>
                                     </ul>
-                                </div>
+                                </div> --}}
 
                                 <div class="card-body">
                                     <h5 class="card-title">Chottgram <span>| This Year</span></h5>
@@ -396,7 +427,7 @@
                         <div class="col-12">
                             <div class="card">
 
-                                <div class="filter">
+                                {{-- <div class="filter">
                                     <a class="icon" href="#" data-bs-toggle="dropdown"><i
                                             class="bi bi-three-dots"></i></a>
                                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -408,7 +439,7 @@
                                         <li><a class="dropdown-item" href="#">This Month</a></li>
                                         <li><a class="dropdown-item" href="#">This Year</a></li>
                                     </ul>
-                                </div>
+                                </div> --}}
 
                                 <div class="card-body">
                                     <h5 class="card-title">Reports <span>/Today</span></h5>
@@ -492,7 +523,7 @@
                         </div><!-- End Reports -->
 
                         <!-- Recent Sales -->
-                        <div class="col-12">
+                        {{-- <div class="col-12">
                             <div class="card recent-sales overflow-auto">
 
                                 <div class="filter">
@@ -569,13 +600,13 @@
                                 </div>
 
                             </div>
-                        </div><!-- End Recent Sales -->
+                        </div><!-- End Recent Sales --> --}}
 
                         <!-- Top Selling -->
 
 
-                    </div>
-                </div><!-- End Left side columns -->
+                    {{-- </div>
+                </div><!-- End Left side columns --> --}}
 
 
                 <!-- Right side columns -->
@@ -583,7 +614,7 @@
 
 
                     <!-- Recent Activity -->
-                    <div class="card">
+                    {{-- <div class="card">
                         <div class="filter">
                             <a class="icon" href="#" data-bs-toggle="dropdown"><i
                                     class="bi bi-three-dots"></i></a>
@@ -656,7 +687,7 @@
                             </div>
 
                         </div>
-                    </div><!-- End Recent Activity -->
+                    </div><!-- End Recent Activity --> --}}
 
                     <!-- Budget Report -->
                     <div class="card">
@@ -812,8 +843,11 @@
                         </div>
                     </div><!-- End Website Traffic -->
 
+
+                    {{-- <h1>Nafis</h1> --}}
+
                     <!-- News & Updates Traffic -->
-                    <div class="card">
+                    {{-- <div class="card">
                         <div class="filter">
                             <a class="icon" href="#" data-bs-toggle="dropdown"><i
                                     class="bi bi-three-dots"></i></a>
@@ -866,33 +900,33 @@
                                         eius...</p>
                                 </div>
 
-                            </div><!-- End sidebar recent posts-->
+                            </div><!-- End sidebar recent posts--> --}}
 
-                        </div>
+                        {{-- </div>
                     </div><!-- End News & Updates -->
 
-                </div><!-- End Right side columns -->
+                </div><!-- End Right side columns --> --}}
 
-            </div>
-        </section>
+            {{-- </div>
+        </section> --}}
 
-    </main><!-- End #main -->
+    {{-- </main><!-- End #main --> --}}
 
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
         <div class="copyright">
             &copy; Copyright <strong><span>Task Management</span></strong>. All Rights Reserved
         </div>
-        <div class="credits">
+        {{-- <div class="credits">
             <!-- All the links in the footer should remain intact. -->
             <!-- You can delete the links only if you purchased the pro version. -->
             <!-- Licensing information: https://bootstrapmade.com/license/ -->
             <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
         </div>
-    </footer><!-- End Footer -->
+    </footer><!-- End Footer --> --}}
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
+    {{-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a> --}}
 
     <!-- Vendor JS Files -->
     <script src="{{ asset('import/assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
@@ -905,7 +939,7 @@
     <script src="{{ asset('import/assets/vendor/php-email-form/validate.js') }}"></script>
 
     <!-- Template Main JS File -->
-    <script src="{{ asset('import/assets/js/main.js') }}"></script>
+    {{-- <script src="{{ asset('import/assets/js/main.js') }}"></script> --}}
 
 </body>
 

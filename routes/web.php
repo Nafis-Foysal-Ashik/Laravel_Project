@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Hash;
 
 Route::get('/homepage', [taskController::class,'index'])->name("homepage");
 
-Route::get('/dash' , function(){
+Route::get('/' , function(){
     return view('layouts.homepage');
 })->name("dashboard");
 
@@ -24,7 +24,7 @@ Route::post('/available', [taskController::class, 'storeAvailable'])->name('avai
 Route::get('/ava', [taskController::class, 'avaialable'])->name("availablePage");
 
 
-Route::get('/', [taskController::class,'show'])->name("showpage");
+Route::get('/show', [taskController::class,'show'])->name("showpage");
 
 Route::get('/create', function () {
     return view('create');
@@ -55,7 +55,12 @@ Route::post('/loginUser', [taskController::class, 'loginUser'])->name('loginUser
 
 //Route::get('/available', [taskController::class, 'availableuser'])->name("avaiableuser");
 
+Route::post('/customerlogin',[taskController::class, 'customerlogin']);
 
 
 
-Route::get('/khulna-tasks', [taskController::class , 'showKhulnaTasks'])->name("khulna");
+Route::get('/khulna', [taskController::class , 'showKhulnaTasks'])->name("khulna");
+Route::get('/dhaka', [taskController::class , 'showDhakaTasks'])->name("dhaka");
+Route::get('/rajshahi', [taskController::class , 'showRajshahiTasks'])->name("rajshahi");
+Route::get('/sylhet', [taskController::class , 'showSylhetTasks'])->name("sylhet");
+Route::get('/chottogram', [taskController::class , 'showChottogramTasks'])->name("chottogram");
