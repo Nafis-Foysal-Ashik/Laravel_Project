@@ -14,9 +14,12 @@
 
     <!-- Form to submit available information -->
     <div class="card mb-4">
-        <div class="card-header bg-primary text-white">
-            Add New Available Information
-        </div>
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <span>Add New Available Information</span>
+            <a href="{{ route('homepage') }}" class="btn btn-primary">Back</a>
+          </div>
+
+
         <div class="card-body">
             <form action="{{ route('available.store') }}" method="POST" enctype="multipart/form-data"> <!-- Add enctype here -->
                 @csrf

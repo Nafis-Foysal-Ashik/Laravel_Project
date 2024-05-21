@@ -2,944 +2,616 @@
 <html lang="en">
 
 <head>
-    {{-- <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Employee Task Management System</title>
+  <meta content="A description of your task management system" name="description">
+  <meta content="task management, employee productivity" name="keywords">
 
-    <meta content="" name="description">
-    <meta content="" name="keywords"> --}}
+  <link href="{{ asset('import/assets/img/favicon.png') }}" rel="icon">
+  <link href="{{ asset('import/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
-    <!-- Favicons -->
-    {{-- <link href="{{ asset('import/assets/img/favicon.png" rel="icon') }}">
-    <link href="{{ asset('import/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon"> --}}
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="{{ asset('import/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('import/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ asset('import/assets/vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ asset('import/assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('import/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
-    <!-- Google Fonts -->
-    {{-- <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet"> --}}
+  <link href="{{ asset('import/assets/css/main.css') }}" rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
-    <link href="{{ asset('import/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('import/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet') }}">
-    <link href="{{ asset('import/assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('import/assets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
-    <link href="{{ asset('import/assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
-    <link href="{{ asset('import/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-    <link href="{{ asset('import/assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
+  </head>
 
-    <!-- Template Main CSS File -->
-    <link href="{{ asset('import/assets/css/style.css') }}" rel="stylesheet">
-
-    <!-- =======================================================
-  * Template Name: Task Management
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Apr 20 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
-
-<body>
-
-    <!-- ======= Header ======= -->
-    {{-- <header id="header" class="header fixed-top d-flex align-items-center">
-
-        <nav class="header-nav ms-auto">
-            <ul class="d-flex align-items-center">
+<body class="index-page">
 
 
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-                <li class="nav-item dropdown pe-3">
+        <h1 class="sitename">ETMS</h1> <span>.</span>
 
-                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
-                        data-bs-toggle="dropdown">
-                        {{-- <img
-                            src="{{ asset('import/assets/img/profile-img.jpg" alt="Profile" class="rounded-circle') }}">
-                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span> --}}
-                    </a><!-- End Profile Iamge Icon -->
+      <nav id="navmenu" class="navmenu">
+        <ul>
 
-                    {{-- <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-                        <li class="dropdown-header">
-                            <h6>Kevin Anderson</h6>
-                            <span>Web Designer</span>
+          <li> <a class="nav-link collapsed" href="{{ route('loginpage') }}">
+            <i class="bi bi-box-arrow-in-right"></i>
+            <span>Login</span>
+        </a></li>
 
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
 
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="{{ route('loginpage') }}">
-                                <i class="bi bi-box-arrow-right"></i>
-                                <span>Sign Out</span>
-                            </a>
-                        </li> --}}
+          <li><a class="nav-link collapsed" href="{{ route('registerPage') }}">
+            <i class="bi bi-box-arrow-in-right"></i>
+            <span>Register</span>
+        </a></li>
 
-                    {{-- </ul><!-- End Profile Dropdown Items -->
-                </li><!-- End Profile Nav -->
 
+          <li><a class="nav-link collapsed" href="{{ route('showpage') }}">
+
+            <span>Show</span>
+        </a></li>
+
+
+          <!-- <li><a href="blog.html">Blog</a></li>
+
+          <li><a href="blog.html">Blog</a></li>
+
+          <li><a href="blog.html">Blog</a></li> -->
+
+
+          <li class="dropdown"><a href="#"><span>Division</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a class="nav-link collapsed" href="{{ route('khulna') }}">
+
+                <span>Khulna</span>
+            </a></li>
+
+
+              <!-- <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li> -->
+              <li><a class="nav-link collapsed" href="{{ route('dhaka') }}">
+
+                <span>Dhaka</span>
+            </a></li>
+
+
+              <li><a class="nav-link collapsed" href="{{ route('rajshahi') }}">
+
+                <span>Rajshahi</span>
+            </a></li>
+
+
+              <li><a class="nav-link collapsed" href="{{ route('sylhet') }}">
+
+                <span>Sylhet</span>
+            </a></li>
+
+              <li><a class="nav-link collapsed" href="{{ route('chottogram') }}">
+
+                <span>Chottogram</span>
+            </a></li>
             </ul>
-        </nav><!-- End Icons Navigation -->
-
-    </header><!-- End Header --> --}}
-
-    <!-- ======= Sidebar ======= -->
-    <aside id="sidebar" class="sidebar">
-
-        <ul class="sidebar-nav" id="sidebar-nav">
-
-            <li class="nav-item">
-                <a class="nav-link " href="{{ route('dashboard') }}">
-                    <i class="bi bi-grid"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li><!-- End Dashboard Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('loginpage') }}">
-                    <i class="bi bi-box-arrow-in-right"></i>
-                    <span>Login</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('registerPage') }}">
-                    <i class="bi bi-box-arrow-in-right"></i>
-                    <span>Register</span>
-                </a>
-            </li>
-
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('showpage') }}">
-                    <i class="bi bi-box-arrow-in-right"></i>
-                    <span>Show</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link " href="{{ route('dashboard') }}">
-                    <i class="bi bi-grid"></i>
-                    <span>Division</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('khulna') }}">
-                    <i class="bi bi-box-arrow-in-right"></i>
-                    <span>Khulna</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('dhaka') }}">
-                    <i class="bi bi-box-arrow-in-right"></i>
-                    <span>Dhaka</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('rajshahi') }}">
-                    <i class="bi bi-box-arrow-in-right"></i>
-                    <span>Rajshahi</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('sylhet') }}">
-                    <i class="bi bi-box-arrow-in-right"></i>
-                    <span>Sylhet</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('chottogram') }}">
-                    <i class="bi bi-box-arrow-in-right"></i>
-                    <span>Chottogram</span>
-                </a>
-            </li>
-
-
-
-            <li class="nav-item">
-                <a class="nav-link " href="{{ route('dashboard') }}">
-                    <i class="bi bi-grid"></i>
-                    <span>Not Booked</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('availablebookingPage') }}">
-                    <i class="bi bi-box-arrow-in-right"></i>
-                    <span>Avaiable</span>
-                </a>
-            </li>
-
+          </li>
+          <li><a class="nav-link collapsed" href="{{ route('availablebookingPage') }}">
+            <span>Avaiable</span>
+        </a></li>
         </ul>
-
-    </aside><!-- End Sidebar-->
-
-
-    <main id="main" class="main">
-
-        <div class="pagetitle">
-            <h1>Dashboard</h1>
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item active">Dashboard</li>
-                </ol>
-            </nav>
-        </div><!-- End Page Title -->
-
-        <section class="section dashboard">
-            <div class="row">
-
-                <!-- Left side columns -->
-                <div class="col-lg-12">
-                    <div class="row">
-
-                        <!-- Sales Card -->
-                        <div class="col-xxl-4 col-md-6">
-                            <div class="card info-card sales-card">
-
-                                <div class="filter">
-                                    <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                            class="bi bi-three-dots"></i></a>
-                                    {{-- <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                        <li class="dropdown-header text-start">
-                                            <h6>Filter</h6>
-                                        </li>
-
-                                        <li><a class="dropdown-item" href="#">Today</a></li>
-                                        <li><a class="dropdown-item" href="#">This Month</a></li>
-                                        <li><a class="dropdown-item" href="#">This Year</a></li>
-                                    </ul> --}}
-                                </div>
-
-                                <div class="card-body">
-                                    <h5 class="card-title">Khulna <span>| This Year</span></h5>
-
-                                    <div class="d-flex align-items-center">
-                                        <div
-                                            class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                            <i class="bi bi-cart"></i>
-                                        </div>
-                                        <div class="ps-3">
-                                            <h6>145</h6>
-                                            <span class="text-success small pt-1 fw-bold">12%</span> <span
-                                                class="text-muted small pt-2 ps-1">increase</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="col-xxl-4 col-md-6">
-                            <div class="card info-card sales-card">
-
-                                {{-- <div class="filter">
-                                    <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                            class="bi bi-three-dots"></i></a>
-                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                        <li class="dropdown-header text-start">
-                                            <h6>Filter</h6>
-                                        </li>
-
-                                        <li><a class="dropdown-item" href="#">Today</a></li>
-                                        <li><a class="dropdown-item" href="#">This Month</a></li>
-                                        <li><a class="dropdown-item" href="#">This Year</a></li>
-                                    </ul>
-                                </div> --}}
-
-                                <div class="card-body">
-                                    <h5 class="card-title">Dhaka <span>| This Year</span></h5>
-
-                                    <div class="d-flex align-items-center">
-                                        <div
-                                            class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                            <i class="bi bi-cart"></i>
-                                        </div>
-                                        <div class="ps-3">
-                                            <h6>364</h6>
-                                            <span class="text-success small pt-1 fw-bold">27%</span> <span
-                                                class="text-muted small pt-2 ps-1">increase</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="col-xxl-4 col-md-6">
-                            <div class="card info-card sales-card">
-
-                                {{-- <div class="filter">
-                                    <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                            class="bi bi-three-dots"></i></a>
-                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                        <li class="dropdown-header text-start">
-                                            <h6>Filter</h6>
-                                        </li>
-
-                                        <li><a class="dropdown-item" href="#">Today</a></li>
-                                        <li><a class="dropdown-item" href="#">This Month</a></li>
-                                        <li><a class="dropdown-item" href="#">This Year</a></li>
-                                    </ul>
-                                </div> --}}
-
-                                <div class="card-body">
-                                    <h5 class="card-title">Khulna <span>| This Year</span></h5>
-
-                                    <div class="d-flex align-items-center">
-                                        <div
-                                            class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                            <i class="bi bi-cart"></i>
-                                        </div>
-                                        <div class="ps-3">
-                                            <h6>145</h6>
-                                            <span class="text-success small pt-1 fw-bold">9%</span> <span
-                                                class="text-muted small pt-2 ps-1">increase</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="col-xxl-4 col-md-6">
-                            <div class="card info-card sales-card">
-
-                                {{-- <div class="filter">
-                                    <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                            class="bi bi-three-dots"></i></a>
-                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                        <li class="dropdown-header text-start">
-                                            <h6>Filter</h6>
-                                        </li>
-
-                                        <li><a class="dropdown-item" href="#">Today</a></li>
-                                        <li><a class="dropdown-item" href="#">This Month</a></li>
-                                        <li><a class="dropdown-item" href="#">This Year</a></li>
-                                    </ul>
-                                </div> --}}
-
-                                <div class="card-body">
-                                    <h5 class="card-title">Sylhet <span>| This Year</span></h5>
-
-                                    <div class="d-flex align-items-center">
-                                        <div
-                                            class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                            <i class="bi bi-cart"></i>
-                                        </div>
-                                        <div class="ps-3">
-                                            <h6>269</h6>
-                                            <span class="text-success small pt-1 fw-bold">23%</span> <span
-                                                class="text-muted small pt-2 ps-1">increase</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="col-xxl-4 col-md-6">
-                            <div class="card info-card sales-card">
-
-                                {{-- <div class="filter">
-                                    <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                            class="bi bi-three-dots"></i></a>
-                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                        <li class="dropdown-header text-start">
-                                            <h6>Filter</h6>
-                                        </li>
-
-                                        <li><a class="dropdown-item" href="#">Today</a></li>
-                                        <li><a class="dropdown-item" href="#">This Month</a></li>
-                                        <li><a class="dropdown-item" href="#">This Year</a></li>
-                                    </ul>
-                                </div> --}}
-
-                                <div class="card-body">
-                                    <h5 class="card-title">Rajshahi <span>| This Year</span></h5>
-
-                                    <div class="d-flex align-items-center">
-                                        <div
-                                            class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                            <i class="bi bi-cart"></i>
-                                        </div>
-                                        <div class="ps-3">
-                                            <h6>278</h6>
-                                            <span class="text-success small pt-1 fw-bold">22%</span> <span
-                                                class="text-muted small pt-2 ps-1">increase</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="col-xxl-4 col-md-6">
-                            <div class="card info-card sales-card">
-
-                                {{-- <div class="filter">
-                                    <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                            class="bi bi-three-dots"></i></a>
-                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                        <li class="dropdown-header text-start">
-                                            <h6>Filter</h6>
-                                        </li>
-
-                                        <li><a class="dropdown-item" href="#">Today</a></li>
-                                        <li><a class="dropdown-item" href="#">This Month</a></li>
-                                        <li><a class="dropdown-item" href="#">This Year</a></li>
-                                    </ul>
-                                </div> --}}
-
-                                <div class="card-body">
-                                    <h5 class="card-title">Chottgram <span>| This Year</span></h5>
-
-                                    <div class="d-flex align-items-center">
-                                        <div
-                                            class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                            <i class="bi bi-cart"></i>
-                                        </div>
-                                        <div class="ps-3">
-                                            <h6>347</h6>
-                                            <span class="text-success small pt-1 fw-bold">29%</span> <span
-                                                class="text-muted small pt-2 ps-1">increase</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- Reports -->
-                        <div class="col-12">
-                            <div class="card">
-
-                                {{-- <div class="filter">
-                                    <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                            class="bi bi-three-dots"></i></a>
-                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                        <li class="dropdown-header text-start">
-                                            <h6>Filter</h6>
-                                        </li>
-
-                                        <li><a class="dropdown-item" href="#">Today</a></li>
-                                        <li><a class="dropdown-item" href="#">This Month</a></li>
-                                        <li><a class="dropdown-item" href="#">This Year</a></li>
-                                    </ul>
-                                </div> --}}
-
-                                <div class="card-body">
-                                    <h5 class="card-title">Reports <span>/Today</span></h5>
-
-                                    <!-- Line Chart -->
-                                    <div id="reportsChart"></div>
-
-                                    <script>
-                                        document.addEventListener("DOMContentLoaded", () => {
-                                            new ApexCharts(document.querySelector("#reportsChart"), {
-                                                series: [{
-                                                        name: 'Khulna',
-                                                        data: [31, 40, 28, 51, 42, 82, 56]
-                                                    },
-                                                    {
-                                                        name: 'Dhaka',
-                                                        data: [11, 32, 45, 32, 34, 52, 41]
-                                                    },
-                                                    {
-                                                        name: 'Chottogram',
-                                                        data: [15, 11, 32, 18, 9, 24, 11]
-                                                    },
-                                                    {
-                                                        name: 'Sylhet',
-                                                        data: [19, 41,25, 43, 54, 23, 14]
-                                                    },
-                                                    {
-                                                        name: 'Rajshahi',
-                                                        data: [43, 16, 63, 78, 23, 32, 67]
-                                                    }
-                                                ],
-
-                                                chart: {
-                                                    height: 350,
-                                                    type: 'area',
-                                                    toolbar: {
-                                                        show: false
-                                                    },
-                                                },
-                                                markers: {
-                                                    size: 4
-                                                },
-                                                colors: ['#4154f1', '#2eca6a', '#ff771d','#000000','#FA0707'],
-                                                fill: {
-                                                    type: "gradient",
-                                                    gradient: {
-                                                        shadeIntensity: 1,
-                                                        opacityFrom: 0.3,
-                                                        opacityTo: 0.4,
-                                                        stops: [0, 90, 100]
-                                                    }
-                                                },
-                                                dataLabels: {
-                                                    enabled: false
-                                                },
-                                                stroke: {
-                                                    curve: 'smooth',
-                                                    width: 2
-                                                },
-                                                xaxis: {
-                                                    type: 'datetime',
-                                                    categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z",
-                                                        "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z",
-                                                        "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z",
-                                                        "2018-09-19T06:30:00.000Z"
-                                                    ]
-                                                },
-                                                tooltip: {
-                                                    x: {
-                                                        format: 'dd/MM/yy HH:mm'
-                                                    },
-                                                }
-                                            }).render();
-                                        });
-                                    </script>
-                                    <!-- End Line Chart -->
-
-                                </div>
-
-                            </div>
-                        </div><!-- End Reports -->
-
-                        <!-- Recent Sales -->
-                        {{-- <div class="col-12">
-                            <div class="card recent-sales overflow-auto">
-
-                                <div class="filter">
-                                    <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                            class="bi bi-three-dots"></i></a>
-                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                        <li class="dropdown-header text-start">
-                                            <h6>Filter</h6>
-                                        </li>
-
-                                        <li><a class="dropdown-item" href="#">Today</a></li>
-                                        <li><a class="dropdown-item" href="#">This Month</a></li>
-                                        <li><a class="dropdown-item" href="#">This Year</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="card-body">
-                                    <h5 class="card-title">Recent Employee History <span>| Today</span></h5>
-
-                                    <table class="table table-borderless datatable">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Serial Number</th>
-                                                <th scope="col">Customer</th>
-                                                <th scope="col">Product</th>
-                                                <th scope="col">Price</th>
-                                                <th scope="col">Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row"><a href="#">#2457</a></th>
-                                                <td>Brandon Jacob</td>
-                                                <td><a href="#" class="text-primary">At praesentium minu</a>
-                                                </td>
-                                                <td>$64</td>
-                                                <td><span class="badge bg-success">Approved</span></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row"><a href="#">#2147</a></th>
-                                                <td>Bridie Kessler</td>
-                                                <td><a href="#" class="text-primary">Blanditiis dolor omnis
-                                                        similique</a></td>
-                                                <td>$47</td>
-                                                <td><span class="badge bg-warning">Pending</span></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row"><a href="#">#2049</a></th>
-                                                <td>Ashleigh Langosh</td>
-                                                <td><a href="#" class="text-primary">At recusandae
-                                                        consectetur</a></td>
-                                                <td>$147</td>
-                                                <td><span class="badge bg-success">Approved</span></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row"><a href="#">#2644</a></th>
-                                                <td>Angus Grady</td>
-                                                <td><a href="#" class="text-primar">Ut voluptatem id earum
-                                                        et</a></td>
-                                                <td>$67</td>
-                                                <td><span class="badge bg-danger">Rejected</span></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row"><a href="#">#2644</a></th>
-                                                <td>Raheem Lehner</td>
-                                                <td><a href="#" class="text-primary">Sunt similique
-                                                        distinctio</a></td>
-                                                <td>$165</td>
-                                                <td><span class="badge bg-success">Approved</span></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
-                                </div>
-
-                            </div>
-                        </div><!-- End Recent Sales --> --}}
-
-                        <!-- Top Selling -->
-
-
-                    {{-- </div>
-                </div><!-- End Left side columns --> --}}
-
-
-                <!-- Right side columns -->
-                <div class="col-lg-12">
-
-
-                    <!-- Recent Activity -->
-                    {{-- <div class="card">
-                        <div class="filter">
-                            <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                    class="bi bi-three-dots"></i></a>
-                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                <li class="dropdown-header text-start">
-                                    <h6>Filter</h6>
-                                </li>
-
-                                <li><a class="dropdown-item" href="#">Today</a></li>
-                                <li><a class="dropdown-item" href="#">This Month</a></li>
-                                <li><a class="dropdown-item" href="#">This Year</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="card-body">
-                            <h5 class="card-title">Recent Activity <span>| Today</span></h5>
-
-                            <div class="activity">
-
-                                <div class="activity-item d-flex">
-                                    <div class="activite-label">32 min</div>
-                                    <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
-                                    <div class="activity-content">
-                                        Quia quae rerum <a href="#" class="fw-bold text-dark">explicabo
-                                            officiis</a> beatae
-                                    </div>
-                                </div><!-- End activity item-->
-
-                                <div class="activity-item d-flex">
-                                    <div class="activite-label">56 min</div>
-                                    <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
-                                    <div class="activity-content">
-                                        Voluptatem blanditiis blanditiis eveniet
-                                    </div>
-                                </div><!-- End activity item-->
-
-                                <div class="activity-item d-flex">
-                                    <div class="activite-label">2 hrs</div>
-                                    <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
-                                    <div class="activity-content">
-                                        Voluptates corrupti molestias voluptatem
-                                    </div>
-                                </div><!-- End activity item-->
-
-                                <div class="activity-item d-flex">
-                                    <div class="activite-label">1 day</div>
-                                    <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
-                                    <div class="activity-content">
-                                        Tempore autem saepe <a href="#" class="fw-bold text-dark">occaecati
-                                            voluptatem</a> tempore
-                                    </div>
-                                </div><!-- End activity item-->
-
-                                <div class="activity-item d-flex">
-                                    <div class="activite-label">2 days</div>
-                                    <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
-                                    <div class="activity-content">
-                                        Est sit eum reiciendis exercitationem
-                                    </div>
-                                </div><!-- End activity item-->
-
-                                <div class="activity-item d-flex">
-                                    <div class="activite-label">4 weeks</div>
-                                    <i class='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
-                                    <div class="activity-content">
-                                        Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
-                                    </div>
-                                </div><!-- End activity item-->
-
-                            </div>
-
-                        </div>
-                    </div><!-- End Recent Activity --> --}}
-
-                    <!-- Budget Report -->
-                    <div class="card">
-                        <div class="filter">
-                            <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                    class="bi bi-three-dots"></i></a>
-                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                <li class="dropdown-header text-start">
-                                    <h6>Filter</h6>
-                                </li>
-
-                                <li><a class="dropdown-item" href="#">Today</a></li>
-                                <li><a class="dropdown-item" href="#">This Month</a></li>
-                                <li><a class="dropdown-item" href="#">This Year</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="card-body pb-0">
-                            <h5 class="card-title">Budget Report <span>| This Month</span></h5>
-
-                            <div id="budgetChart" style="min-height: 400px;" class="echart"></div>
-
-                            <script>
-                                document.addEventListener("DOMContentLoaded", () => {
-                                    var budgetChart = echarts.init(document.querySelector("#budgetChart")).setOption({
-                                        legend: {
-                                            data: ['Allocated Budget', 'Actual Spending']
-                                        },
-                                        radar: {
-                                            // shape: 'circle',
-                                            indicator: [{
-                                                    name: 'Sales',
-                                                    max: 6500
-                                                },
-                                                {
-                                                    name: 'Administration',
-                                                    max: 16000
-                                                },
-                                                {
-                                                    name: 'Information Technology',
-                                                    max: 30000
-                                                },
-                                                {
-                                                    name: 'Customer Support',
-                                                    max: 38000
-                                                },
-                                                {
-                                                    name: 'Development',
-                                                    max: 52000
-                                                },
-                                                {
-                                                    name: 'Marketing',
-                                                    max: 25000
-                                                }
-                                            ]
-                                        },
-                                        series: [{
-                                            name: 'Budget vs spending',
-                                            type: 'radar',
-                                            data: [{
-                                                    value: [4200, 3000, 20000, 35000, 50000, 18000],
-                                                    name: 'Allocated Budget'
-                                                },
-                                                {
-                                                    value: [5000, 14000, 28000, 26000, 42000, 21000],
-                                                    name: 'Actual Spending'
-                                                }
-                                            ]
-                                        }]
-                                    });
-                                });
-                            </script>
-
-                        </div>
-                    </div><!-- End Budget Report -->
-
-                    <!-- Website Traffic -->
-                    <div class="card">
-                        <div class="filter">
-                            <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                    class="bi bi-three-dots"></i></a>
-                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                <li class="dropdown-header text-start">
-                                    <h6>Filter</h6>
-                                </li>
-
-                                <li><a class="dropdown-item" href="#">Today</a></li>
-                                <li><a class="dropdown-item" href="#">This Month</a></li>
-                                <li><a class="dropdown-item" href="#">This Year</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="card-body pb-0">
-                            <h5 class="card-title">Website Traffic <span>| Today</span></h5>
-
-                            <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
-
-                            <script>
-                                document.addEventListener("DOMContentLoaded", () => {
-                                    echarts.init(document.querySelector("#trafficChart")).setOption({
-                                        tooltip: {
-                                            trigger: 'item'
-                                        },
-                                        legend: {
-                                            top: '5%',
-                                            left: 'center'
-                                        },
-                                        series: [{
-                                            name: 'Access From',
-                                            type: 'pie',
-                                            radius: ['40%', '70%'],
-                                            avoidLabelOverlap: false,
-                                            label: {
-                                                show: false,
-                                                position: 'center'
-                                            },
-                                            emphasis: {
-                                                label: {
-                                                    show: true,
-                                                    fontSize: '18',
-                                                    fontWeight: 'bold'
-                                                }
-                                            },
-                                            labelLine: {
-                                                show: false
-                                            },
-                                            data: [{
-                                                    value: 1048,
-                                                    name: 'Search Engine'
-                                                },
-                                                {
-                                                    value: 735,
-                                                    name: 'Direct'
-                                                },
-                                                {
-                                                    value: 580,
-                                                    name: 'Email'
-                                                },
-                                                {
-                                                    value: 484,
-                                                    name: 'Union Ads'
-                                                },
-                                                {
-                                                    value: 300,
-                                                    name: 'Video Ads'
-                                                }
-                                            ]
-                                        }]
-                                    });
-                                });
-                            </script>
-
-                        </div>
-                    </div><!-- End Website Traffic -->
-
-
-                    {{-- <h1>Nafis</h1> --}}
-
-                    <!-- News & Updates Traffic -->
-                    {{-- <div class="card">
-                        <div class="filter">
-                            <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                    class="bi bi-three-dots"></i></a>
-                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                <li class="dropdown-header text-start">
-                                    <h6>Filter</h6>
-                                </li>
-
-                                <li><a class="dropdown-item" href="#">Today</a></li>
-                                <li><a class="dropdown-item" href="#">This Month</a></li>
-                                <li><a class="dropdown-item" href="#">This Year</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="card-body pb-0">
-                            <h5 class="card-title">News &amp; Updates <span>| Today</span></h5>
-
-                            <div class="news">
-                                <div class="post-item clearfix">
-                                    <img src="{{ asset('import/assets/img/news-1.jpg') }}" alt="">
-                                    <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>
-                                    <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>
-                                </div>
-
-                                <div class="post-item clearfix">
-                                    <img src="{{ asset('import/assets/img/news-2.jpg') }}" alt="">
-                                    <h4><a href="#">Quidem autem et impedit</a></h4>
-                                    <p>Illo nemo neque maiores vitae officiis cum eum turos elan dries werona nande...
-                                    </p>
-                                </div>
-
-                                <div class="post-item clearfix">
-                                    <img src="{{ asset('import/assets/img/news-3.jpg') }}" alt="">
-                                    <h4><a href="#">Id quia et et ut maxime similique occaecati ut</a></h4>
-                                    <p>Fugiat voluptas vero eaque accusantium eos. Consequuntur sed ipsam et totam...
-                                    </p>
-                                </div>
-
-                                <div class="post-item clearfix">
-                                    <img src="{{ asset('import/assets/img/news-4.jpg') }}" alt="">
-                                    <h4><a href="#">Laborum corporis quo dara net para</a></h4>
-                                    <p>Qui enim quia optio. Eligendi aut asperiores enim repellendusvel rerum cuder...
-                                    </p>
-                                </div>
-
-                                <div class="post-item clearfix">
-                                    <img src="{{ asset('import/assets/img/news-5.jpg') }}" alt="">
-                                    <h4><a href="#">Et dolores corrupti quae illo quod dolor</a></h4>
-                                    <p>Odit ut eveniet modi reiciendis. Atque cupiditate libero beatae dignissimos
-                                        eius...</p>
-                                </div>
-
-                            </div><!-- End sidebar recent posts--> --}}
-
-                        {{-- </div>
-                    </div><!-- End News & Updates -->
-
-                </div><!-- End Right side columns --> --}}
-
-            {{-- </div>
-        </section> --}}
-
-    {{-- </main><!-- End #main --> --}}
-
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer">
-        <div class="copyright">
-            &copy; Copyright <strong><span>Task Management</span></strong>. All Rights Reserved
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <div class="info d-flex align-items-center">
+        <div class="container">
+          <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-6 text-center">
+              <h2 class="">Welcome to ETMS</h2>
+              <p> We're thrilled to have you join our team. To help you hit the ground running, we're introducing you to our employee task management system, your one-stop shop for staying organized and achieving your goals!</p>
+              <a href="{{ route('loginpage') }}" class="btn-get-started">Log In</a>
+            </div>
+          </div>
         </div>
-        {{-- <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      </div>
+
+      <div id="section-fqREP4OWmC-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="carousel-item">
+          <img src="{{ asset('import/assets/img/hero-carousel/hero-carousel-1.jpg')}}" alt="">
         </div>
-    </footer><!-- End Footer --> --}}
 
-    {{-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a> --}}
+        <div class="carousel-item active">
+          <img src="{{ asset('import/assets/img/hero-carousel/hero-carousel-2.jpg')}}" alt="">
+        </div>
 
-    <!-- Vendor JS Files -->
-    <script src="{{ asset('import/assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('import/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('import/assets/vendor/chart.js/chart.umd.js') }}"></script>
-    <script src="{{ asset('import/assets/vendor/echarts/echarts.min.js') }}"></script>
-    <script src="{{ asset('import/assets/vendor/quill/quill.js') }}"></script>
-    <script src="{{ asset('import/assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
-    <script src="{{ asset('import/assets/vendor/tinymce/tinymce.min.js') }}"></script>
-    <script src="{{ asset('import/assets/vendor/php-email-form/validate.js') }}"></script>
+        <div class="carousel-item">
+          <img src="{{ asset('import/assets/img/hero-carousel/hero-carousel-3.jpg')}}" alt="">
+        </div>
 
-    <!-- Template Main JS File -->
-    {{-- <script src="{{ asset('import/assets/js/main.js') }}"></script> --}}
+        <div class="carousel-item">
+          <img src="{{ asset('import/assets/img/hero-carousel/hero-carousel-4.jpg')}}" alt="">
+        </div>
+
+        <div class="carousel-item">
+          <img src="{{ asset('import/assets/img/hero-carousel/hero-carousel-5.jpg')}}" alt="">
+        </div>
+
+        <a class="carousel-control-prev" href="#section-fqREP4OWmC-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#section-fqREP4OWmC-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+
+    </section><!-- /Get Started Section -->
+
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <i class="fa-solid fa-mountain-city"></i>
+              </div>
+              <h3>Organize</h3>
+                    <p>This section focuses on the core functionality of creating, assigning, and managing tasks. It highlights how users can organize their work effectively with features</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="fa-solid fa-arrow-up-from-ground-water"></i>
+              </div>
+              <h3>Collaborate Seamlessly</h3>
+              <p>This emphasizes the communication and collaboration features that facilitate teamwork.Real-time task discussions and comments for quick communication and problem-solving</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="fa-solid fa-compass-drafting"></i>
+              </div>
+              <h3>Boost Productivity</h3>
+              <p> This section showcases features that help employees manage their time and work efficiently.</p>
+
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="fa-solid fa-trowel-bricks"></i>
+              </div>
+              <h3>Stay on Top of Goals</h3>
+              <p>This  focuses on features that promote goal-oriented work for employees and teams. </p>
+
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="fa-solid fa-helmet-safety"></i>
+              </div>
+              <h3>Simplify Workflow</h3>
+              <p>This section emphasizes the benefits of potential integrations and automations within the system.</p>
+
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="fa-solid fa-arrow-up-from-ground-water"></i>
+              </div>
+              <h3>Gain Valuable Insights</h3>
+              <p>This section highlights the reporting and analytics features that provide valuable data and insights.</p>
+
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 class="">Projects</h2>
+
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-remodeling">Remodeling</li>
+            <li data-filter=".filter-construction">Construction</li>
+            <li data-filter=".filter-repairs">Repairs</li>
+            <li data-filter=".filter-design">Design</li>
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-remodeling">
+              <div class="portfolio-content h-100">
+                <img src="{{ asset('import/assets/img/projects/remodeling-1.jpg')}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>App 1</h4>
+
+                  <a href="{{ asset('import/assets/img/projects/remodeling-1.jpg')}}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"></a>
+                  <a href="{{ asset('import/assets/project-details.html')}}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
+              <div class="portfolio-content h-100">
+                <img src="{{ asset('import/assets/img/projects/construction-1.jpg')}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Product 1</h4>
+
+                  <a href="{{ asset('import/assets/img/projects/construction-1.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link')}}"></a>
+
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repairs">
+              <div class="portfolio-content h-100">
+                <img src="{{ asset('import/assets/img/projects/repairs-1.jpg')}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Branding 1</h4>
+
+                  <a href="{{ asset('import/assets/img/projects/repairs-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding')}}" class="glightbox preview-link"></a>
+
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
+              <div class="portfolio-content h-100">
+                <img src="{{ asset('import/assets/img/projects/design-1.jpg')}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Books 1</h4>
+
+                  <a href="{{ asset('import/assets/img/projects/design-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link')}}"></a>
+
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-remodeling">
+              <div class="portfolio-content h-100">
+                <img src="{{ asset('import/assets/img/projects/remodeling-2.jpg')}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>App 2</h4>
+
+                  <a href="{{ asset('import/assets/img/projects/remodeling-2.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link')}}"></a>
+
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
+              <div class="portfolio-content h-100">
+                <img src="{{ asset('import/assets/img/projects/construction-2.jpg')}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Product 2</h4>
+
+                  <a href="{{ asset('import/assets/img/projects/construction-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link')}}"></a>
+
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repairs">
+              <div class="portfolio-content h-100">
+                <img src="{{ asset('import/assets/img/projects/repairs-2.jpg')}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Branding 2</h4>
+
+                  <a href="{{ asset('import/assets/img/projects/repairs-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link')}}"></a>
+
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
+              <div class="portfolio-content h-100">
+                <img src="{{ asset('import/assets/img/projects/design-2.jpg')}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Books 2</h4>
+
+                  <a href="{{ asset('import/assets/img/projects/design-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link')}}"></a>
+
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-remodeling">
+              <div class="portfolio-content h-100">
+                <img src="{{ asset('import/assets/img/projects/remodeling-3.jpg')}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>App 3</h4>
+
+                  <a href="{{ asset('import/assets/img/projects/remodeling-3.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link')}}"></a>
+
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
+              <div class="portfolio-content h-100">
+                <img src="{{ asset('import/assets/img/projects/construction-3.jpg')}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Product 3</h4>
+
+                  <a href="{{ asset('import/assets/img/projects/construction-3.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link')}}"></a>
+
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repairs">
+              <div class="portfolio-content h-100">
+                <img src="{{ asset('import/assets/img/projects/repairs-3.jpg')}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Branding 3</h4>
+
+                  <a href="{{ asset('import/assets/img/projects/repairs-3.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link')}}"></a>
+
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
+              <div class="portfolio-content h-100">
+                <img src="{{ asset('import/assets/img/projects/design-3.jpg')}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Books 3</h4>
+
+                  <a href="{{ asset('import/assets/img/projects/design-3.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link')}}"></a>
+
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Projects Section -->
+
+
+    {{-- <!-- Recent Blog Posts Section -->
+    <section id="recent-blog-posts" class="recent-blog-posts section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 class="">Recent Blog Posts</h2>
+
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-5">
+
+          <div class="col-xl-4 col-md-6">
+            <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="{{ asset('import/assets/img/blog/blog-1.jpg" class="img-fluid')}}" alt="">
+                <span class="post-date">December 12</span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+
+                <h3 class="post-title">Eum ad dolor et. Autem aut fugiat debitis</h3>
+
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-person"></i> <span class="ps-2">Julia Parker</span>
+                  </div>
+                  <span class="px-3 text-black-50">/</span>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Politics</span>
+                  </div>
+                </div>
+
+                <hr>
+
+                <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+              </div>
+
+            </div>
+          </div><!-- End post item -->
+
+          <div class="col-xl-4 col-md-6">
+            <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="200">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="{{ asset('import/assets/img/blog/blog-2.jpg" class="img-fluid')}}" alt="">
+                <span class="post-date">July 17</span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+
+                <h3 class="post-title">Et repellendus molestiae qui est sed omnis</h3>
+
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-person"></i> <span class="ps-2">Mario Douglas</span>
+                  </div>
+                  <span class="px-3 text-black-50">/</span>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Sports</span>
+                  </div>
+                </div>
+
+                <hr>
+
+                <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+              </div>
+
+            </div>
+          </div><!-- End post item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="post-item position-relative h-100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="{{ asset('import/assets/img/blog/blog-3.jpg" class="img-fluid')}}" alt="">
+                <span class="post-date">September 05</span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+
+                <h3 class="post-title">Quia assumenda est et veritati tirana ploder</h3>
+
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-person"></i> <span class="ps-2">Lisa Hunter</span>
+                  </div>
+                  <span class="px-3 text-black-50">/</span>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Economics</span>
+                  </div>
+                </div>
+
+                <hr>
+
+                <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+              </div>
+
+            </div>
+          </div><!-- End post item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Recent Blog Posts Section --> --}}
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <!-- <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">UpConstruction</span>
+          </a> -->
+          <div class="footer-contact pt-3">
+            <p>Pocket Gate , KUET</p>
+            <p>BANGLADESH</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>01538383849</span></p>
+            <p><strong>Email:</strong> <span>etms@example.com</span></p>
+          </div>
+
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Product Management</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">ETMS</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ asset('import/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{ asset('import/assets/vendor/php-email-form/validate.js')}}"></script>
+  <script src="{{ asset('import/assets/vendor/aos/aos.js')}}"></script>
+  <script src="{{ asset('import/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+  <script src="{{ asset('import/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js')}}"></script>
+  <script src="{{ asset('import/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+  <script src="{{ asset('import/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+  <script src="{{ asset('import/assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
+
+  <!-- Main JS File -->
+  <script src="{{ asset('import/assets/js/main.js')}}"></script>
 
 </body>
 

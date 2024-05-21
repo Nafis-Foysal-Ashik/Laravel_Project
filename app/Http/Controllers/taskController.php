@@ -148,7 +148,7 @@ class taskController extends Controller
             $tasks = tasks::all();
             return view('adminpage',compact('tasks'));
         }
-        Session::flash('msg', 'Something is wrong');
+        Session::flash('msg', 'Incorrect E-mail or Password');
         return view('login');
     }
 

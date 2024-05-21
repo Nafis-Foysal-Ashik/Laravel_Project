@@ -22,12 +22,28 @@
         background-color: #007bff;
         color: white;
     }
+    .btn-custom {
+        background-color: #ff6347; /* Tomato color */
+        color: white;
+    }
+
+    .btn-custom:hover {
+        background-color: #e5533c; /* Darker tomato color */
+    }
+
 </style>
 @endpush
 
 @section('main-section')
 <div class="container my-5">
     <h1 class="mb-4 text-center">Messages</h1>
+
+    <div class="card-header text-white d-flex justify-content-end">
+        <a href="{{ route('homepage') }}" class="btn btn-custom">Back</a>
+    </div>
+
+
+
 
     @if (count($messages) > 0)
         <table class="table-custom">

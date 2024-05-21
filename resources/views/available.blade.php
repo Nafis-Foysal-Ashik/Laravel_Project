@@ -34,7 +34,7 @@
 
 @section('main-section')
     <div class="container my-5">
-        <h1 class="mb-4 text-center">Available Information</h1>
+        <h1 class="mb-4 text-center">Available Employee Information</h1>
 
         {{-- @if (session('name') && session('email'))
         <div class="alert alert-info" role="alert">
@@ -48,6 +48,10 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h7 class="display-6 mb-0">Showing available user</h7>  <a href="{{ route('homepage') }}" class="btn btn-primary">Back</a>
+          </div>
 
         @if (count($availables) > 0)
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
