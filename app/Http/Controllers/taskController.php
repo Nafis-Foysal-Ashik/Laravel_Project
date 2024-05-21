@@ -385,4 +385,20 @@ public function showMessages()
 }
 
 
+public function deleteMessage(Request $request)
+{
+    $messages = session('messages', []);
+    $index = $request->input('index');
+
+    if (isset($messages[$index])) {
+        unset($messages[$index]);
+        session(['messages' => array_values($messages)]); // Re-index array
+        return redirect()->route('messagePage');
+    }
+
+    return response()->json(['success' => false]);
+}
+
+
+
 }

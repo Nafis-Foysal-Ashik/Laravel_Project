@@ -26,6 +26,8 @@ Route::get('/availableUser', [taskController::class, 'avaialable'])->name("avail
 //message section
 Route::post('/message', [TaskController::class, 'message'])->name('messagePage');
 Route::get('/message', [TaskController::class, 'showMessages'])->name('messagePage');
+// Add this route to your routes file (e.g., routes/web.php)
+Route::post('/messages/delete', [TaskController::class, 'deleteMessage'])->name('deleteMessage');
 
 
 //Booking
