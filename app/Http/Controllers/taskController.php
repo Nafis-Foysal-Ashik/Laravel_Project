@@ -112,26 +112,30 @@ class taskController extends Controller
     public function registerUser(Request $request)
     {
         $newUser = new User();
-    $newUser->fullname = $request->input('fullname');
-    $newUser->email = $request->input('email');
-    $newUser->phone = $request->input('phone');
-    $newUser->address = $request->input('address');
-    $newUser->gender = $request->input('gender');
-    $newUser->date_of_birth = $request->input('dob');
+        $newUser->fullname = $request->input('fullname');
+        $newUser->email = $request->input('email');
+        $newUser->phone = $request->input('phone');
+        $newUser->address = $request->input('address');
+        $newUser->gender = $request->input('gender');
+        $newUser->date_of_birth = $request->input('dob');
 
-    if ($request->hasFile('picture')) {
-        $imageName = time() . '.' . $request->file('picture')->getClientOriginalExtension();
-        $request->file('picture')->move(public_path('uploads'), $imageName);
-        $newUser->picture = $imageName;
-    }
+        if ($request->hasFile('picture')) {
+            $imageName = time() . '.' . $request->file('picture')->getClientOriginalExtension();
+            $request->file('picture')->move(public_path('uploads'), $imageName);
+            $newUser->picture = $imageName;
+        }
 
-    $newUser->password = Hash::make($request->input('password'));
-    $newUser->type = "Customer";
+        $newUser->password = Hash::make($request->input('password'));
+        $newUser->type = "Customer";
 
-    if ($newUser->save()) {
-        return view('login');
-        // return redirect('loginUser')->with('success','Congratulations! Your account is ready');
-    }
+        if ($newUser->save()) {
+            // Store user info in session
+            session(['user' => $newUser->only(['id', 'fullname', 'email', 'type'])]);
+
+            return redirect('login')->with('success', 'Congratulations! Your account is ready');
+        }
+
+        return back()->withErrors(['msg' => 'Registration failed, please try again.']);
     }
 
     public function loginUser(Request $request)
@@ -144,31 +148,40 @@ class taskController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+
+            // Store user info in session
+            session(['user' => $user->only(['id', 'fullname', 'email', 'type'])]);
+
+            // Set a cookie with the user ID
+            $cookie = cookie('user_id', $user->id, 60); // Expires in 60 minutes
+
             Session::flash('msg', 'Logged in Successfully');
             $tasks = tasks::all();
-            return view('adminpage',compact('tasks'));
+            return response()->view('adminpage', compact('tasks'))->withCookie($cookie);
         }
+
         Session::flash('msg', 'Incorrect E-mail or Password');
         return view('login');
     }
 
-    public function customerlogin(Request $request)
-    {
-        // Validation
-        $request->validate([
-            'email' => 'required|string|email',
-            'password' => 'required|string',
-        ]);
-        $credentials = $request->only('email', 'password');
+    // public function customerlogin(Request $request)
+    // {
+    //     // Validation
+    //     $request->validate([
+    //         'email' => 'required|string|email',
+    //         'password' => 'required|string',
+    //     ]);
+    //     $credentials = $request->only('email', 'password');
 
-        if (Auth::attempt($credentials)) {
-            Session::flash('msg', 'Logged in Successfully');
-            $tasks = tasks::all();
-            return view('adminpage',compact('tasks'));
-        }
-        Session::flash('msg', 'Something is wrong');
-        return view('cutomer_login');
-    }
+    //     if (Auth::attempt($credentials)) {
+    //         Session::flash('msg', 'Logged in Successfully');
+    //         $tasks = tasks::all();
+    //         return view('adminpage',compact('tasks'));
+    //     }
+    //     Session::flash('msg', 'Something is wrong');
+    //     return view('cutomer_login');
+    // }
 
     public function showKhulnaTasks()
 {
@@ -179,14 +192,14 @@ class taskController extends Controller
 
 public function showDhakaTasks()
 {
-    $tasks = tasks::where('division', 'Dhaka')->get(); // Retrieve tasks with division Khulna from the database
+    $tasks = tasks::where('division', 'Dhaka')->get(); // Retrieve tasks with division Dhaka from the database
 
     return view('dhaka', compact('tasks')); // Pass tasks to the view
 }
 
 public function showRajshahiTasks()
 {
-    $tasks = tasks::where('division', 'Rajshahi')->get(); // Retrieve tasks with division Khulna from the database
+    $tasks = tasks::where('division', 'Rajshahi')->get(); // Retrieve tasks with division Rajshahi from the database
 
     return view('rajshahi', compact('tasks')); // Pass tasks to the view
 }
@@ -212,7 +225,7 @@ public function showChottogramTasks()
 
 public function avaiableuser()
 {
-    return view('avaiable');
+    return view('available');
 }
 
 

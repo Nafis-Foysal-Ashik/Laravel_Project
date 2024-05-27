@@ -4,6 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\taskController;
 use Illuminate\Support\Facades\Hash;
 
+use App\Http\Controllers\AuthController;
+
+Route::get('/login', [taskController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [taskController::class, 'loginUser']);
+
+
 
 Route::get('/homepage', [taskController::class,'index'])->name("homepage");
 
@@ -65,15 +71,16 @@ Route::get('delete/{id}',[taskController::class,'delete'])->name("deletepage");
 
 //Auth
 
-Route::get('/register', [taskController::class, 'register'])->name("registerPage");
-
-
-Route::get('/login', [taskController::class , 'login'])->name("loginpage");
-
+Route::get('/register', [taskController::class, 'register'])->name('registerPage');
+Route::get('/login', [taskController::class, 'login'])->name('loginpage');
 Route::post('/registerUser', [taskController::class, 'registerUser'])->name('registerUser');
-
 Route::post('/loginUser', [taskController::class, 'loginUser'])->name('loginUser');
 
+// Protected routes that require authentication
+Route::middleware(['checkUserSession'])->group(function () {
+    Route::get('/adminpage', [taskController::class, 'adminPage']);
+    // Add other routes that require authentication here
+});
 //Route::get('/available', [taskController::class, 'availableuser'])->name("avaiableuser");
 
 Route::post('/customerlogin',[taskController::class, 'customerlogin']);
