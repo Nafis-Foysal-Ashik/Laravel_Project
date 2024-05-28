@@ -11,18 +11,12 @@ Route::post('/login', [taskController::class, 'loginUser']);
 
 
 
-Route::get('/homepage', [taskController::class,'index'])->name("homepage");
+//Route::get('/homepage', [taskController::class,'index'])->name("homepage");
+Route::get('/mainpage', [taskController::class,'index'])->name("homepage");
 
 Route::get('/' , function(){
     return view('layouts.homepage');
 })->name("dashboard");
-
-
-
-
-// Route::get('/customer_register',[taskController::class,'customer_register'])->name("customer_regsiter");
-// Route::post('/customerregisterUser',[taskController::class,'customerUser']);
-// Route::get('/customer_login',[taskController::class,'customer_login'])->name("customer_regsiter");
 
 
 Route::get('/available', [taskController::class, 'showAvailable'])->name('available'); // To display the available information
@@ -32,7 +26,6 @@ Route::get('/availableUser', [taskController::class, 'avaialable'])->name("avail
 //message section
 Route::post('/message', [TaskController::class, 'message'])->name('messagePage');
 Route::get('/message', [TaskController::class, 'showMessages'])->name('messagePage');
-// Add this route to your routes file (e.g., routes/web.php)
 Route::post('/messages/delete', [TaskController::class, 'deleteMessage'])->name('deleteMessage');
 
 
@@ -40,9 +33,6 @@ Route::post('/messages/delete', [TaskController::class, 'deleteMessage'])->name(
 Route::get('/availableUserbooking', [taskController::class, 'avaialablebooking'])->name("availablebookingPage");
 
 
-//booking
-//Route::post('/booknow', [taskController::class, 'bookNow'])->name('booknow');
-// Route::get('/adminpage', [taskController::class, 'adminPage'])->name('adminpage');
 
 Route::get('/editavailableuser/{id}', [taskController::class,'editavailable'])->name("editavailablepage");
 
@@ -76,14 +66,14 @@ Route::get('/login', [taskController::class, 'login'])->name('loginpage');
 Route::post('/registerUser', [taskController::class, 'registerUser'])->name('registerUser');
 Route::post('/loginUser', [taskController::class, 'loginUser'])->name('loginUser');
 
-// Protected routes that require authentication
+
 Route::middleware(['checkUserSession'])->group(function () {
     Route::get('/adminpage', [taskController::class, 'adminPage']);
-    // Add other routes that require authentication here
 });
+
+Route::get('/searchTasks', [taskController::class, 'searchTasks'])->name('searchTasks');
 //Route::get('/available', [taskController::class, 'availableuser'])->name("avaiableuser");
 
-Route::post('/customerlogin',[taskController::class, 'customerlogin']);
 
 
 //division
@@ -92,3 +82,10 @@ Route::get('/dhaka', [taskController::class , 'showDhakaTasks'])->name("dhaka");
 Route::get('/rajshahi', [taskController::class , 'showRajshahiTasks'])->name("rajshahi");
 Route::get('/sylhet', [taskController::class , 'showSylhetTasks'])->name("sylhet");
 Route::get('/chottogram', [taskController::class , 'showChottogramTasks'])->name("chottogram");
+
+//admin division
+Route::get('/khulnaadmin', [taskController::class , 'showKhulnaAdmin'])->name("khulnaadmin");
+Route::get('/dhakaadmin', [taskController::class , 'showDhakaAdmin'])->name("dhakaadmin");
+Route::get('/sylhetadmin', [taskController::class , 'showSylhetAdmin'])->name("sylhetadmin");
+Route::get('/chottogramadmin', [taskController::class , 'showChottogramAdmin'])->name("chottogramadmin");
+Route::get('/rajshahiadmin', [taskController::class , 'showRajshahiAdmin'])->name("rajshahiadmin");

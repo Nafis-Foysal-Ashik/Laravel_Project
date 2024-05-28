@@ -69,7 +69,7 @@
                                 <p class="card-text"><strong>Rating:</strong> {{ $available->rating }}</p>
                             </div>
                             <div class="card-footer d-flex justify-content-around">
-                                <a href="{{ route('editavailablepage', $available->id) }}" class="btn btn-custom btn-sm">Update Available</a>
+                                <a href="{{ route('editavailablepage', $available->id) }}" class="btn btn-custom btn-sm">Allocate Task</a>
                                 <a href="{{ route('deleteavailablepage', $available->id) }}" class="btn btn-danger btn-sm">Delete</a>
                             </div>
                         </div>

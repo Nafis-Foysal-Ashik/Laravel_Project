@@ -31,7 +31,7 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-        <h1 class="sitename">ETMS</h1> <span>.</span>
+        <h1 class="sitename">CTMS</h1> <span>.</span>
 
       <nav id="navmenu" class="navmenu">
         <ul>
@@ -67,17 +67,6 @@
 
                 <span>Khulna</span>
             </a></li>
-
-
-              <!-- <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li> -->
               <li><a class="nav-link collapsed" href="{{ route('dhaka') }}">
 
                 <span>Dhaka</span>
@@ -101,9 +90,9 @@
             </a></li>
             </ul>
           </li>
-          <li><a class="nav-link collapsed" href="{{ route('availablebookingPage') }}">
+          {{-- <li><a class="nav-link collapsed" href="{{ route('availablebookingPage') }}">
             <span>Avaiable</span>
-        </a></li>
+        </a></li> --}}
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -120,7 +109,7 @@
         <div class="container">
           <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-6 text-center">
-              <h2 class="">Welcome to ETMS</h2>
+              <h2 class="">Welcome to CTMS</h2>
               <p> We're thrilled to have you join our team. To help you hit the ground running, we're introducing you to our employee task management system, your one-stop shop for staying organized and achieving your goals!</p>
               <a href="{{ route('loginpage') }}" class="btn-get-started">Log In</a>
             </div>
@@ -276,11 +265,11 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-remodeling">
               <div class="portfolio-content h-100">
-                <img src="{{ asset('import/assets/img/projects/remodeling-1.jpg')}}" class="img-fluid" alt="">
+                <img src="{{ asset('import/assets/img/projects/construction-3.jpg')}}" class="img-fluid" alt="">
                 <div class="portfolio-info">
                   <h4>App 1</h4>
 
-                  <a href="{{ asset('import/assets/img/projects/remodeling-1.jpg')}}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"></a>
+                  <a href="{{ asset('import/assets/img/projects/construction-3.jpg')}}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"></a>
                   <a href="{{ asset('import/assets/project-details.html')}}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -300,11 +289,11 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repairs">
               <div class="portfolio-content h-100">
-                <img src="{{ asset('import/assets/img/projects/repairs-1.jpg')}}" class="img-fluid" alt="">
+                <img src="{{ asset('import/assets/img/projects/construction-2.jpg')}}" class="img-fluid" alt="">
                 <div class="portfolio-info">
                   <h4>Branding 1</h4>
 
-                  <a href="{{ asset('import/assets/img/projects/repairs-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding')}}" class="glightbox preview-link"></a>
+                  <a href="{{ asset('import/assets/img/projects/construction-2.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding')}}" class="glightbox preview-link"></a>
 
                 </div>
               </div>
@@ -324,101 +313,30 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-remodeling">
               <div class="portfolio-content h-100">
-                <img src="{{ asset('import/assets/img/projects/remodeling-2.jpg')}}" class="img-fluid" alt="">
+                <img src="{{ asset('import/assets/img/projects/design-3.jpg')}}" class="img-fluid" alt="">
                 <div class="portfolio-info">
                   <h4>App 2</h4>
 
-                  <a href="{{ asset('import/assets/img/projects/remodeling-2.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link')}}"></a>
+                  <a href="{{ asset('import/assets/img/projects/design-3.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link')}}"></a>
 
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
-              <div class="portfolio-content h-100">
-                <img src="{{ asset('import/assets/img/projects/construction-2.jpg')}}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 2</h4>
-
-                  <a href="{{ asset('import/assets/img/projects/construction-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link')}}"></a>
-
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repairs">
-              <div class="portfolio-content h-100">
-                <img src="{{ asset('import/assets/img/projects/repairs-2.jpg')}}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 2</h4>
-
-                  <a href="{{ asset('import/assets/img/projects/repairs-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link')}}"></a>
-
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
               <div class="portfolio-content h-100">
                 <img src="{{ asset('import/assets/img/projects/design-2.jpg')}}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Books 2</h4>
+                  <h4>Product 2</h4>
 
-                  <a href="{{ asset('import/assets/img/projects/design-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link')}}"></a>
-
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-remodeling">
-              <div class="portfolio-content h-100">
-                <img src="{{ asset('import/assets/img/projects/remodeling-3.jpg')}}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 3</h4>
-
-                  <a href="{{ asset('import/assets/img/projects/remodeling-3.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link')}}"></a>
+                  <a href="{{ asset('import/assets/img/projects/design-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link')}}"></a>
 
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
-              <div class="portfolio-content h-100">
-                <img src="{{ asset('import/assets/img/projects/construction-3.jpg')}}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 3</h4>
 
-                  <a href="{{ asset('import/assets/img/projects/construction-3.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link')}}"></a>
 
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repairs">
-              <div class="portfolio-content h-100">
-                <img src="{{ asset('import/assets/img/projects/repairs-3.jpg')}}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 3</h4>
-
-                  <a href="{{ asset('import/assets/img/projects/repairs-3.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link')}}"></a>
-
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
-              <div class="portfolio-content h-100">
-                <img src="{{ asset('import/assets/img/projects/design-3.jpg')}}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 3</h4>
-
-                  <a href="{{ asset('import/assets/img/projects/design-3.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link')}}"></a>
-
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
 
         </div>
 
@@ -427,117 +345,6 @@
     </section><!-- /Projects Section -->
 
 
-    {{-- <!-- Recent Blog Posts Section -->
-    <section id="recent-blog-posts" class="recent-blog-posts section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2 class="">Recent Blog Posts</h2>
-
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-5">
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="{{ asset('import/assets/img/blog/blog-1.jpg" class="img-fluid')}}" alt="">
-                <span class="post-date">December 12</span>
-              </div>
-
-              <div class="post-content d-flex flex-column">
-
-                <h3 class="post-title">Eum ad dolor et. Autem aut fugiat debitis</h3>
-
-                <div class="meta d-flex align-items-center">
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-person"></i> <span class="ps-2">Julia Parker</span>
-                  </div>
-                  <span class="px-3 text-black-50">/</span>
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">Politics</span>
-                  </div>
-                </div>
-
-                <hr>
-
-                <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-
-              </div>
-
-            </div>
-          </div><!-- End post item -->
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="200">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="{{ asset('import/assets/img/blog/blog-2.jpg" class="img-fluid')}}" alt="">
-                <span class="post-date">July 17</span>
-              </div>
-
-              <div class="post-content d-flex flex-column">
-
-                <h3 class="post-title">Et repellendus molestiae qui est sed omnis</h3>
-
-                <div class="meta d-flex align-items-center">
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-person"></i> <span class="ps-2">Mario Douglas</span>
-                  </div>
-                  <span class="px-3 text-black-50">/</span>
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">Sports</span>
-                  </div>
-                </div>
-
-                <hr>
-
-                <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-
-              </div>
-
-            </div>
-          </div><!-- End post item -->
-
-          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="{{ asset('import/assets/img/blog/blog-3.jpg" class="img-fluid')}}" alt="">
-                <span class="post-date">September 05</span>
-              </div>
-
-              <div class="post-content d-flex flex-column">
-
-                <h3 class="post-title">Quia assumenda est et veritati tirana ploder</h3>
-
-                <div class="meta d-flex align-items-center">
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-person"></i> <span class="ps-2">Lisa Hunter</span>
-                  </div>
-                  <span class="px-3 text-black-50">/</span>
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">Economics</span>
-                  </div>
-                </div>
-
-                <hr>
-
-                <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-
-              </div>
-
-            </div>
-          </div><!-- End post item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Recent Blog Posts Section --> --}}
 
   </main>
 
@@ -582,7 +389,7 @@
 
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">ETMS</strong> <span>All Rights Reserved</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">CTMS</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->

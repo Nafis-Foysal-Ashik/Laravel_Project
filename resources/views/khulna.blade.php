@@ -5,7 +5,7 @@
 @section('main-section')
 <div class="container">
     <div class="d-flex justify-content-between align-items-center my-5">
-        <div class="h2">Show All Tasks</div>
+        <div class="h2">Showing Khulna Tasks</div>
         {{-- <a href="{{ route('createpage') }}" class="btn btn-primary">Add Task</a> --}}
     </div>
 </div>

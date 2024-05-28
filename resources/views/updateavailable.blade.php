@@ -80,12 +80,9 @@
 
                 <div class="mb-3">
                     <label for="picture" class="form-label">Upload Picture:</label>
-                    {{-- @if($task->picture)
-                        <div class="mb-3">
-                            <img src="{{ asset('uploads/' . $task->picture) }}" alt="Current Picture" class="img-thumbnail" style="max-width: 150px;">
-                        </div>
-                    @endif --}}
                     <input type="file" class="form-control" id="picture" name="picture" value="<img src="{{ asset('uploads/' . $available->picture) }}>
+                    {{-- <img type="file" class="form-control" id= "picture" name="picture" src="{{ (!empty($available->picture)) ? url(('uploads/' . $available->picture)):url('upload/no_image.jpg') }}" alt="Admin" height="120px" width="150px" >
+                    <input type="file" class="form-control" id="picture" name="picture" value="<img src="{{ asset('uploads/' . $available->picture) }}> --}}
                 </div>
 
                 <input type="hidden" name="id" value="{{ $available->id }}">

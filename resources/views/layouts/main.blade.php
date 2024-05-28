@@ -25,7 +25,7 @@
     <div class="bg-sky-blue">
         <div class="container py-3">
             <div class="h1 text-white">
-                <marquee behavior="slide" direction="left">Employee Task Management System</marquee>
+                <marquee behavior="slide" direction="left">CSE Task Management System</marquee>
             </div>
         </div>
     </div>

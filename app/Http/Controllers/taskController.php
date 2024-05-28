@@ -63,10 +63,6 @@ class taskController extends Controller
     {
         $request->validate(
             [
-                // 'name'=>'required',
-                // 'work'=>'required',
-                // 'dueDate'=>'required'
-
                 'name'=>'required',
                 'phone'=>'required',
                 'mail'=>'required',
@@ -140,48 +136,45 @@ class taskController extends Controller
 
     public function loginUser(Request $request)
     {
-        // Validation
-        $request->validate([
-            'email' => 'required|string|email',
-            'password' => 'required|string',
-        ]);
-        $credentials = $request->only('email', 'password');
+         $request->validate([
+        'email' => 'required|string|email',
+        'password' => 'required|string',
+    ]);
 
-        if (Auth::attempt($credentials)) {
-            $user = Auth::user();
+    // Attempt to authenticate the user
+    $credentials = $request->only('email', 'password');
+    if (Auth::attempt($credentials)) {
+        $user = Auth::user();
 
-            // Store user info in session
-            session(['user' => $user->only(['id', 'fullname', 'email', 'type'])]);
+        // Store user info in session
+        session(['user' => $user->only(['id', 'fullname', 'email', 'type'])]);
 
-            // Set a cookie with the user ID
-            $cookie = cookie('user_id', $user->id, 60); // Expires in 60 minutes
-
-            Session::flash('msg', 'Logged in Successfully');
-            $tasks = tasks::all();
-            return response()->view('adminpage', compact('tasks'))->withCookie($cookie);
+       // Redirect to the appropriate page based on user type
+        if ($user->type == "Customer") {
+            $availables = Available::all();
+    return view('booking_employee', compact('availables'));
         }
-
+        if ($user->type == "Admin") {
+            $tasks = tasks::all();
+            return response()->view('adminpage', compact('tasks'));
+        }
+    } else {
+        // If authentication fails, flash an error message and return to the login view
         Session::flash('msg', 'Incorrect E-mail or Password');
         return view('login');
     }
 
-    // public function customerlogin(Request $request)
-    // {
-    //     // Validation
-    //     $request->validate([
-    //         'email' => 'required|string|email',
-    //         'password' => 'required|string',
-    //     ]);
-    //     $credentials = $request->only('email', 'password');
+    }
 
-    //     if (Auth::attempt($credentials)) {
-    //         Session::flash('msg', 'Logged in Successfully');
-    //         $tasks = tasks::all();
-    //         return view('adminpage',compact('tasks'));
-    //     }
-    //     Session::flash('msg', 'Something is wrong');
-    //     return view('cutomer_login');
-    // }
+    public function searchTasks(Request $request)
+{
+    $search = $request->input('search');
+
+    // Search tasks by name
+    $tasks = tasks::where('name', 'like', "%$search%")->get();
+
+    return view('adminpage', compact('tasks'));
+}
 
     public function showKhulnaTasks()
 {
@@ -218,37 +211,11 @@ public function showChottogramTasks()
     return view('chottogram', compact('tasks')); // Pass tasks to the view
 }
 
-// public function customer_register()
-// {
-//     return view('customer_register');
-// }
 
 public function avaiableuser()
 {
     return view('available');
 }
-
-
-// public function customerUser(Request $data)
-// {
-//     $newUser=new tasks();
-//     $newUser->fullname=$data->input('fullname');
-//     $newUser->email=$data->input('email');
-//     $newUser->password=$data->input('password');
-//     $newUser->type="Customer_user";
-//     if($newUser->save())
-//     {
-//         return redirect('customer_login')->with('success','Congratulations Your Account is ready');
-//     }
-//     return view('customerUser');
-// }
-
-// public function cutomer_login()
-// {
-
-// }
-
-
 
 public function showAvailable()
     {
@@ -258,7 +225,7 @@ public function showAvailable()
 
     public function avaialable()
     {
-        return view('customer_register');
+        return view('available_register');
     }
 
     public function storeAvailable(Request $request)
@@ -296,38 +263,6 @@ public function showAvailable()
     return redirect()->route('available')->with('success', 'Available information created successfully!');
 }
 
-//update available
-// public function updateavailable(Request $request)
-//     {
-//         $request->validate(
-//             [
-//                 // 'name'=>'required',
-//                 // 'work'=>'required',
-//                 // 'dueDate'=>'required'
-
-//                 'name'=>'required',
-//                 'phone'=>'required',
-//                 'mail'=>'required',
-//                 'division'=>'required',
-//                 'work'=>'required',
-//                 'dueDate'=>'required'
-//             ]
-//             );
-//             $id=$request['id'];
-//         $available =Available::find($id);
-//         $available->name=$request['name'];
-//         $available->phone=$request['phone'];
-//         $available->mail=$request['mail'];
-//         $available->division=$request['division'];
-//         $available->work=$request['work'];
-//         // $available->picture=$request->file('picture')->getClientOriginalName();
-//         // $request->file('picture')->move('uploads/',$available->picture);
-//         $available->dueDate=$request['dueDate'];
-//         $available->save();
-
-//         return redirect(route("homepage"));
-//     }
-
     public function editavailable($id)
 {
     $available = Available::find($id); // Correctly reference the model class
@@ -343,42 +278,12 @@ public function deleteavailable($id)
     return redirect(route("available"));
 }
 
-
-
 //bookint section
 public function avaialablebooking()
 {
     $availables = Available::all();
     return view('booking_employee', compact('availables'));
 }
-
-// public function bookNow(Request $request)
-// {
-//     $name = $request->input('name');
-//     $email = $request->input('email');
-
-//     // Redirect to the admin page with the data
-//     return redirect()->route('available')->with(['name' => $name, 'email' => $email]);
-// }
-
-// public function bookNow(Request $request)
-//     {
-//         $name = $request->input('name');
-//         $email = $request->input('email');
-
-//         // Store the data in the session
-//         session(['name' => $name, 'email' => $email]);
-
-//         // Redirect to the admin page
-//         return redirect()->route('availableUser');
-//     }
-
-//     public function adminPage()
-//     {
-//         return view('adminpage');
-//     }
-
-//message section
 
 public function message(Request $request)
 {
@@ -412,6 +317,39 @@ public function deleteMessage(Request $request)
     return response()->json(['success' => false]);
 }
 
+public function showKhulnaAdmin()
+{
+    $tasks = tasks::where('division', 'Khulna')->get(); // Retrieve tasks with division Khulna from the database
 
+    return view('khulnaAdmin', compact('tasks'));
+}
+
+public function showDhakaAdmin()
+{
+    $tasks = tasks::where('division', 'Dhaka')->get(); // Retrieve tasks with division Khulna from the database
+
+    return view('dhakaAdmin', compact('tasks'));
+}
+
+public function showSylhetAdmin()
+{
+    $tasks = tasks::where('division', 'Sylhet')->get(); // Retrieve tasks with division Khulna from the database
+
+    return view('sylhetAdmin', compact('tasks'));
+}
+
+public function showChottogramAdmin()
+{
+    $tasks = tasks::where('division', 'Chottogram')->get(); // Retrieve tasks with division Khulna from the database
+
+    return view('chottogramAdmin', compact('tasks'));
+}
+
+public function showRajshahiAdmin()
+{
+    $tasks = tasks::where('division', 'Rajshahi')->get(); // Retrieve tasks with division Khulna from the database
+
+    return view('rajshahiAdmin', compact('tasks'));
+}
 
 }
