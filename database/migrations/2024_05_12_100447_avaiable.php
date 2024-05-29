@@ -15,7 +15,7 @@ return new class extends Migration
         $table->id();
         $table->string('fullname');
         $table->string('email')->unique();  // Added unique constraint for email
-        $table->string('password');
+        //$table->string('password');
         $table->string('picture')->nullable();  // Made picture nullable
         $table->string('phone')->nullable();  // Made phone nullable
         $table->string('address')->nullable();  // Made address nullable

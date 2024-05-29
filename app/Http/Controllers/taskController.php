@@ -233,7 +233,7 @@ public function showAvailable()
     $validatedData = $request->validate([
         'fullname'  => 'required|string',
         'email'     => 'required|string|email|unique:avaiable,email',
-        'password'  => 'required|string',
+        //'password'  => 'required|string',
         'picture'   => 'required',
         'phone'     => 'nullable|string',
         'address'   => 'nullable|string',
@@ -243,7 +243,7 @@ public function showAvailable()
     $available = new Available();
     $available->fullname = $request['fullname'];
     $available->email = $request['email'];
-    $available->password = bcrypt($request['password']); // It's a good practice to hash passwords
+    $available->password = "null"; // It's a good practice to hash passwords
 
     // Check if a picture is uploaded
     if ($request->hasFile('picture')) {
