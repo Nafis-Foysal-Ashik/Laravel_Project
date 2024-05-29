@@ -120,23 +120,23 @@
       <div id="section-fqREP4OWmC-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
         <div class="carousel-item">
-          <img src="{{ asset('import/assets/img/hero-carousel/hero-carousel-1.jpg')}}" alt="">
+            <img src="{{ asset('import/assets/img/projects/construction-1.jpg')}}" class="img-fluid" alt="">
         </div>
 
         <div class="carousel-item active">
-          <img src="{{ asset('import/assets/img/hero-carousel/hero-carousel-2.jpg')}}" alt="">
+            <img src="{{ asset('import/assets/img/projects/construction-2.jpg')}}" class="img-fluid" alt="">
         </div>
 
         <div class="carousel-item">
-          <img src="{{ asset('import/assets/img/hero-carousel/hero-carousel-3.jpg')}}" alt="">
+            <img src="{{ asset('import/assets/img/projects/construction-3.jpg')}}" class="img-fluid" alt="">
         </div>
 
         <div class="carousel-item">
-          <img src="{{ asset('import/assets/img/hero-carousel/hero-carousel-4.jpg')}}" alt="">
+            <img src="{{ asset('import/assets/img/projects/design-1.jpg')}}" class="img-fluid" alt="">
         </div>
 
         <div class="carousel-item">
-          <img src="{{ asset('import/assets/img/hero-carousel/hero-carousel-5.jpg')}}" alt="">
+            <img src="{{ asset('import/assets/img/projects/design-2.jpg')}}" class="img-fluid" alt="">
         </div>
 
         <a class="carousel-control-prev" href="#section-fqREP4OWmC-carousel" role="button" data-bs-slide="prev">

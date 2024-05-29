@@ -51,20 +51,20 @@
         </div>
     @endif
 
-    <div class="dropdown mb-4">
+    {{-- <div class="dropdown mb-4">
         <button class="btn btn-custom dropdown-toggle" type="button" id="divisionDropdown" data-bs-toggle="dropdown" aria-expanded="false">
           Division
         </button>
         <ul class="dropdown-menu" aria-labelledby="divisionDropdown">
-          <li><a class="dropdown-item" href="{{ route('khulnaavaiable') }}">Khulna</a></li>
+          <li><a class="dropdown-item" href="{{ route('khulnaadmin') }}">Khulna</a></li>
           <li><a class="dropdown-item" href="{{ route('dhakaadmin') }}">Dhaka</a></li>
           <li><a class="dropdown-item" href="{{ route('rajshahiadmin') }}">Rajshahi</a></li>
           <li><a class="dropdown-item" href="{{ route('sylhetadmin') }}">Sylhet</a></li>
           <li><a class="dropdown-item" href="{{ route('chottogramadmin') }}">Chottogram</a></li>
         </ul>
-      </div>
+      </div> --}}
 
-    @if (count($availables) > 0)
+    @if (count($ava) > 0)
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             @foreach ($availables as $available)
                 <div class="col">
