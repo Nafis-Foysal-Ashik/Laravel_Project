@@ -366,4 +366,11 @@ public function showDhakaAvailable()
     return view('dhakaAvailable', compact('ava'));
 }
 
+public function showRajshahiAvailable()
+{
+    $ava = Available::where('division', 'Rajshahi')->get(); // Retrieve tasks with division Khulna from the database
+
+    return view('rajshahiAvailable', compact('ava'));
+}
+
 }
