@@ -41,10 +41,6 @@
 @endpush
 
 @section('main-section')
-
-<div class="container my-5">
-
-
 <div class="container my-5">
     <h1 class="mb-4 text-center">Available Information</h1>
 
@@ -57,38 +53,41 @@
 
     <div class="d-flex mb-4">
         <div class="dropdown me-2">
-          <button class="btn btn-custom dropdown-toggle" type="button" id="divisionDropdown1" data-bs-toggle="dropdown" aria-expanded="false">
-            Division
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="divisionDropdown1">
-            <li><a class="dropdown-item" href="{{ route('khulnaavaiable') }}">Khulna</a></li>
-            <li><a class="dropdown-item" href="{{ route('dhakaavaiable') }}">Dhaka</a></li>
-            <li><a class="dropdown-item" href="{{ route('rajshahiavaiable') }}">Rajshahi</a></li>
-            <li><a class="dropdown-item" href="{{ route('sylhetavaiable') }}">Sylhet</a></li>
-            <li><a class="dropdown-item" href="{{ route('chottogramavaiable') }}">Chottogram</a></li>
-          </ul>
+            <button class="btn btn-custom dropdown-toggle" type="button" id="divisionDropdown1" data-bs-toggle="dropdown" aria-expanded="false">
+                Division
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="divisionDropdown1">
+                <li><a class="dropdown-item" href="{{ route('khulnaavaiable') }}">Khulna</a></li>
+                <li><a class="dropdown-item" href="{{ route('dhakaavaiable') }}">Dhaka</a></li>
+                <li><a class="dropdown-item" href="{{ route('rajshahiavaiable') }}">Rajshahi</a></li>
+                <li><a class="dropdown-item" href="{{ route('sylhetavaiable') }}">Sylhet</a></li>
+                <li><a class="dropdown-item" href="{{ route('chottogramavaiable') }}">Chottogram</a></li>
+            </ul>
         </div>
         <div class="dropdown">
-          <button class="btn btn-custom dropdown-toggle" type="button" id="divisionDropdown2" data-bs-toggle="dropdown" aria-expanded="false">
-            Category
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="divisionDropdown2">
-            <li><a class="dropdown-item" href="{{ route('showSWE_EngineerAvailable') }}">SWE Engineer</a></li>
-            <li><a class="dropdown-item" href="{{ route('showDatabase_AdministratorAvailable') }}">Database Administrator</a></li>
-            <li><a class="dropdown-item" href="{{ route('showHardware_SpacealistAvailable') }}">Hardware Spacealist</a></li>
-            <li><a class="dropdown-item" href="{{ route('showComputer_Hardware_EngineerAvailable') }}">Computer Hardware Engineer</a></li>
-            <li><a class="dropdown-item" href="{{ route('showWeb_DeveloperAvailable') }}">Web Developer</a></li>
-          </ul>
+            <button class="btn btn-custom dropdown-toggle" type="button" id="divisionDropdown2" data-bs-toggle="dropdown" aria-expanded="false">
+                Category
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="divisionDropdown2">
+                <li><a class="dropdown-item" href="{{ route('showSWE_EngineerAvailable') }}">SWE Engineer</a></li>
+                <li><a class="dropdown-item" href="{{ route('showDatabase_AdministratorAvailable') }}">Database Administrator</a></li>
+                <li><a class="dropdown-item" href="{{ route('showHardware_SpacealistAvailable') }}">Hardware Spacealist</a></li>
+                <li><a class="dropdown-item" href="{{ route('showComputer_Hardware_EngineerAvailable') }}">Computer Hardware Engineer</a></li>
+                <li><a class="dropdown-item" href="{{ route('showWeb_DeveloperAvailable') }}">Web Developer</a></li>
+            </ul>
         </div>
-      </div>
-    </div>
-    <div class="d-flex justify-content-end gap-2 mb-4">
-        <a href="{{ route('loginpage') }}" class="btn btn-primary me-2">Sign Up</a>
-        <a href="{{ route('dashboard') }}" class="btn btn-primary">DashBoard</a>
     </div>
 
-
-
+    <div class="d-flex justify-content-between mb-4">
+        <form class="d-flex" action="{{ route('search') }}" method="GET">
+            <input class="form-control me-2" type="search" placeholder="Search by name" aria-label="Search" name="query">
+            <button class="btn btn-custom" type="submit">Search</button>
+        </form>
+        <div>
+            <a href="{{ route('loginpage') }}" class="btn btn-primary me-2">Sign Up</a>
+            <a href="{{ route('dashboard') }}" class="btn btn-primary">DashBoard</a>
+        </div>
+    </div>
 
     @if (count($availables) > 0)
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">

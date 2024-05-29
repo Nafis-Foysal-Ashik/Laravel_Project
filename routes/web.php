@@ -106,3 +106,5 @@ Route::get('/cse_eng', [taskController::class, 'showComputer_Hardware_EngineerAv
 Route::get('/web', [taskController::class, 'showWeb_DeveloperAvailable'])->name('showWeb_DeveloperAvailable');
 
 Route::get('/searchAvailable', [taskController::class, 'searchAvailable'])->name('searchAvailable');
+
+Route::get('/search', [taskController::class, 'search'])->name('search');

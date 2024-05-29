@@ -448,4 +448,13 @@ public function searchAvailable(Request $request)
         return view('available.available', compact('availables'));
     }
 
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        // Search for available entries by fullname
+        $availables = Available::where('fullname', 'LIKE', "%{$query}%")->get();
+
+        return view('available.booking_employee', compact('availables'));
+    }
 }
