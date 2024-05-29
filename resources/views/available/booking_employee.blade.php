@@ -41,6 +41,10 @@
 @endpush
 
 @section('main-section')
+
+<div class="container my-5">
+
+
 <div class="container my-5">
     <h1 class="mb-4 text-center">Available Information</h1>
 
@@ -77,6 +81,13 @@
           </ul>
         </div>
       </div>
+    </div>
+    <div class="d-flex justify-content-end gap-2 mb-4">
+        <a href="{{ route('loginpage') }}" class="btn btn-primary me-2">Sign Up</a>
+        <a href="{{ route('dashboard') }}" class="btn btn-primary">DashBoard</a>
+    </div>
+
+
 
 
     @if (count($availables) > 0)
