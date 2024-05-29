@@ -380,4 +380,11 @@ public function showSylhetAvailable()
     return view('sylhetAvailable', compact('ava'));
 }
 
+public function showChottogramAvailable()
+{
+    $ava = Available::where('division', 'Chottogram')->get(); // Retrieve tasks with division Khulna from the database
+
+    return view('chottogramAvailable', compact('ava'));
+}
+
 }
