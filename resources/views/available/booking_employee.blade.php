@@ -51,18 +51,33 @@
         </div>
     @endif
 
-    <div class="dropdown mb-4">
-        <button class="btn btn-custom dropdown-toggle" type="button" id="divisionDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-          Division
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="divisionDropdown">
-          <li><a class="dropdown-item" href="{{ route('khulnaavaiable') }}">Khulna</a></li>
-          <li><a class="dropdown-item" href="{{ route('dhakaavaiable') }}">Dhaka</a></li>
-          <li><a class="dropdown-item" href="{{ route('rajshahiavaiable') }}">Rajshahi</a></li>
-          <li><a class="dropdown-item" href="{{ route('sylhetavaiable') }}">Sylhet</a></li>
-          <li><a class="dropdown-item" href="{{ route('chottogramavaiable') }}">Chottogram</a></li>
-        </ul>
+    <div class="d-flex mb-4">
+        <div class="dropdown me-2">
+          <button class="btn btn-custom dropdown-toggle" type="button" id="divisionDropdown1" data-bs-toggle="dropdown" aria-expanded="false">
+            Division
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="divisionDropdown1">
+            <li><a class="dropdown-item" href="{{ route('khulnaavaiable') }}">Khulna</a></li>
+            <li><a class="dropdown-item" href="{{ route('dhakaavaiable') }}">Dhaka</a></li>
+            <li><a class="dropdown-item" href="{{ route('rajshahiavaiable') }}">Rajshahi</a></li>
+            <li><a class="dropdown-item" href="{{ route('sylhetavaiable') }}">Sylhet</a></li>
+            <li><a class="dropdown-item" href="{{ route('chottogramavaiable') }}">Chottogram</a></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-custom dropdown-toggle" type="button" id="divisionDropdown2" data-bs-toggle="dropdown" aria-expanded="false">
+            Category
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="divisionDropdown2">
+            <li><a class="dropdown-item" href="{{ route('khulnaavaiable') }}">SWE Engineer</a></li>
+            <li><a class="dropdown-item" href="{{ route('dhakaavaiable') }}">Database Administrator</a></li>
+            <li><a class="dropdown-item" href="{{ route('rajshahiavaiable') }}">Hardware Spacealist</a></li>
+            <li><a class="dropdown-item" href="{{ route('sylhetavaiable') }}">Computer Hardware Engineer</a></li>
+            <li><a class="dropdown-item" href="{{ route('chottogramavaiable') }}">Web Developer</a></li>
+          </ul>
+        </div>
       </div>
+
 
     @if (count($availables) > 0)
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">

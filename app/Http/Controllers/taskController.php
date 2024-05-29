@@ -356,35 +356,35 @@ public function showKhulnaAvailable()
 {
     $ava = Available::where('division', 'Khulna')->get(); // Retrieve tasks with division Khulna from the database
 
-    return view('khulnaAvailable', compact('ava'));
+    return view('divAvaiable.khulnaAvailable', compact('ava'));
 }
 
 public function showDhakaAvailable()
 {
     $ava = Available::where('division', 'Dhaka')->get(); // Retrieve tasks with division Khulna from the database
 
-    return view('dhakaAvailable', compact('ava'));
+    return view('divAvaiable.dhakaAvailable', compact('ava'));
 }
 
 public function showRajshahiAvailable()
 {
     $ava = Available::where('division', 'Rajshahi')->get(); // Retrieve tasks with division Khulna from the database
 
-    return view('rajshahiAvailable', compact('ava'));
+    return view('divAvaiable.rajshahiAvailable', compact('ava'));
 }
 
 public function showSylhetAvailable()
 {
     $ava = Available::where('division', 'Sylhet')->get(); // Retrieve tasks with division Khulna from the database
 
-    return view('sylhetAvailable', compact('ava'));
+    return view('divAvaiable.sylhetAvailable', compact('ava'));
 }
 
 public function showChottogramAvailable()
 {
     $ava = Available::where('division', 'Chottogram')->get(); // Retrieve tasks with division Khulna from the database
 
-    return view('chottogramAvailable', compact('ava'));
+    return view('divAvaiable.chottogramAvailable', compact('ava'));
 }
 
 }
