@@ -321,35 +321,35 @@ public function showKhulnaAdmin()
 {
     $tasks = tasks::where('division', 'Khulna')->get(); // Retrieve tasks with division Khulna from the database
 
-    return view('khulnaAdmin', compact('tasks'));
+    return view('divadmin.khulnaAdmin', compact('tasks'));
 }
 
 public function showDhakaAdmin()
 {
     $tasks = tasks::where('division', 'Dhaka')->get(); // Retrieve tasks with division Khulna from the database
 
-    return view('dhakaAdmin', compact('tasks'));
+    return view('divadmin.dhakaAdmin', compact('tasks'));
 }
 
 public function showSylhetAdmin()
 {
     $tasks = tasks::where('division', 'Sylhet')->get(); // Retrieve tasks with division Khulna from the database
 
-    return view('sylhetAdmin', compact('tasks'));
+    return view('divadmin.sylhetAdmin', compact('tasks'));
 }
 
 public function showChottogramAdmin()
 {
     $tasks = tasks::where('division', 'Chottogram')->get(); // Retrieve tasks with division Khulna from the database
 
-    return view('chottogramAdmin', compact('tasks'));
+    return view('divadmin.chottogramAdmin', compact('tasks'));
 }
 
 public function showRajshahiAdmin()
 {
     $tasks = tasks::where('division', 'Rajshahi')->get(); // Retrieve tasks with division Khulna from the database
 
-    return view('rajshahiAdmin', compact('tasks'));
+    return view('divadmin.rajshahiAdmin', compact('tasks'));
 }
 
 }
