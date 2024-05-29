@@ -17,7 +17,7 @@ class taskController extends Controller
     {
         $tasks = tasks::all();
         $data=compact('tasks');
-        return view("adminpage")->with($data);
+        return view("admin.adminpage")->with($data);
     }
 
     public function store(Request $request)
@@ -56,7 +56,7 @@ class taskController extends Controller
     {
         $task=tasks::find($id);
         $data=compact('task');
-        return view("update")->with($data);
+        return view("admin.update")->with($data);
     }
 
     public function update(Request $request)
@@ -97,12 +97,12 @@ class taskController extends Controller
 
     public function register()
     {
-        return view('register');
+        return view('admin.register');
     }
 
     public function login()
     {
-        return view('login');
+        return view('admin.login');
     }
 
     public function registerUser(Request $request)
@@ -156,12 +156,12 @@ class taskController extends Controller
         }
         if ($user->type == "Admin") {
             $tasks = tasks::all();
-            return response()->view('adminpage', compact('tasks'));
+            return response()->view('admin.adminpage', compact('tasks'));
         }
     } else {
         // If authentication fails, flash an error message and return to the login view
         Session::flash('msg', 'Incorrect E-mail or Password');
-        return view('login');
+        return view('admin.login');
     }
 
     }
@@ -173,7 +173,7 @@ class taskController extends Controller
     // Search tasks by name
     $tasks = tasks::where('name', 'like', "%$search%")->get();
 
-    return view('adminpage', compact('tasks'));
+    return view('admin.adminpage', compact('tasks'));
 }
 
     public function showKhulnaTasks()
