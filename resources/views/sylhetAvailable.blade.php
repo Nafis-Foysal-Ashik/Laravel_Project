@@ -51,22 +51,11 @@
         </div>
     @endif
 
-    <div class="dropdown mb-4">
-        <button class="btn btn-custom dropdown-toggle" type="button" id="divisionDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-          Division
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="divisionDropdown">
-          <li><a class="dropdown-item" href="{{ route('khulnaavaiable') }}">Khulna</a></li>
-          <li><a class="dropdown-item" href="{{ route('dhakaavaiable') }}">Dhaka</a></li>
-          <li><a class="dropdown-item" href="{{ route('rajshahiavaiable') }}">Rajshahi</a></li>
-          <li><a class="dropdown-item" href="{{ route('sylhetavaiable') }}">Sylhet</a></li>
-          <li><a class="dropdown-item" href="{{ route('chottogramavaiable') }}">Chottogram</a></li>
-        </ul>
-      </div>
 
-    @if (count($availables) > 0)
+
+    @if (count($ava) > 0)
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-            @foreach ($availables as $available)
+            @foreach ($ava as $available)
                 <div class="col">
                     <div class="card h-100 shadow-sm">
                         <img src="{{ asset('uploads/'.$available->picture) }}" class="card-img-top p-3 mx-auto d-block" alt="User Picture">

@@ -94,3 +94,5 @@ Route::get('/rajshahiadmin', [taskController::class , 'showRajshahiAdmin'])->nam
 Route::get('/khulnaAvaiable', [taskController::class , 'showKhulnaAvailable'])->name("khulnaavaiable");
 Route::get('/dhakaAvaiable', [taskController::class , 'showDhakaAvailable'])->name("dhakaavaiable");
 Route::get('/rajshahiAvaiable', [taskController::class, 'showRajshahiAvailable'])->name('rajshahiavaiable');
+Route::get('/sylhetAvaiable', [taskController::class, 'showSylhetAvailable'])->name('sylhetavaiable');
+Route::get('/chottogramAvaiable', [taskController::class, 'showChottogramAvailable'])->name('chottogramavaiable');
