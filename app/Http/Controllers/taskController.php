@@ -298,7 +298,7 @@ public function avaialablebooking()
 public function message(Request $request)
 {
     $name = $request->input('name');
-    $email = $request->input('email');
+    $email = $request->input('email');// Add phone number field
 
     // Store the data in the session
     session()->push('messages', ['name' => $name, 'email' => $email]);
@@ -306,7 +306,6 @@ public function message(Request $request)
     return redirect()->route('availablebookingPage');
 }
 
-//message section
 public function showMessages()
 {
     $messages = session('messages', []);
