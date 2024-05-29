@@ -180,35 +180,35 @@ class taskController extends Controller
 {
     $tasks = tasks::where('division', 'Khulna')->get(); // Retrieve tasks with division Khulna from the database
 
-    return view('khulna', compact('tasks')); // Pass tasks to the view
+    return view('division.khulna', compact('tasks')); // Pass tasks to the view
 }
 
 public function showDhakaTasks()
 {
     $tasks = tasks::where('division', 'Dhaka')->get(); // Retrieve tasks with division Dhaka from the database
 
-    return view('dhaka', compact('tasks')); // Pass tasks to the view
+    return view('division.dhaka', compact('tasks')); // Pass tasks to the view
 }
 
 public function showRajshahiTasks()
 {
     $tasks = tasks::where('division', 'Rajshahi')->get(); // Retrieve tasks with division Rajshahi from the database
 
-    return view('rajshahi', compact('tasks')); // Pass tasks to the view
+    return view('division.rajshahi', compact('tasks')); // Pass tasks to the view
 }
 
 public function showSylhetTasks()
 {
     $tasks = tasks::where('division', 'Sylhet')->get(); // Retrieve tasks with division Khulna from the database
 
-    return view('sylhet', compact('tasks')); // Pass tasks to the view
+    return view('division.sylhet', compact('tasks')); // Pass tasks to the view
 }
 
 public function showChottogramTasks()
 {
     $tasks = tasks::where('division', 'Chottogram')->get(); // Retrieve tasks with division Khulna from the database
 
-    return view('chottogram', compact('tasks')); // Pass tasks to the view
+    return view('division.chottogram', compact('tasks')); // Pass tasks to the view
 }
 
 
