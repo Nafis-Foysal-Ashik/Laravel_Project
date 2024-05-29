@@ -4,6 +4,10 @@
 <title>Task Management System</title>
 
 <style>
+  body {
+    background-color: #f8f9fa;
+  }
+
   .card-img-top {
     width: 100px;
     height: 100px;
@@ -96,7 +100,7 @@
           <p class="card-text"><strong>Mail:</strong> {{ $task->mail }}</p>
           <p class="card-text"><strong>Division:</strong> {{ $task->division }}</p>
           <p class="card-text"><strong>Work:</strong> {{ $task->work }}</p>
-          <p class="card-text"><strong>Due Date:</strong> {{ $task->dueDate }}</p>
+          <p class="card-text"><strong>Dead Line:</strong> {{ $task->dueDate }}</p>
           <div class="d-flex justify-content-around">
             <a href="{{ route("editpage", $task->id) }}" class="btn btn-success btn-sm">Update</a>
             <a href="{{ route("deletepage", $task->id) }}" class="btn btn-danger btn-sm">Delete</a>
