@@ -69,11 +69,11 @@
             Category
           </button>
           <ul class="dropdown-menu" aria-labelledby="divisionDropdown2">
-            <li><a class="dropdown-item" href="{{ route('khulnaavaiable') }}">SWE Engineer</a></li>
-            <li><a class="dropdown-item" href="{{ route('dhakaavaiable') }}">Database Administrator</a></li>
-            <li><a class="dropdown-item" href="{{ route('rajshahiavaiable') }}">Hardware Spacealist</a></li>
-            <li><a class="dropdown-item" href="{{ route('sylhetavaiable') }}">Computer Hardware Engineer</a></li>
-            <li><a class="dropdown-item" href="{{ route('chottogramavaiable') }}">Web Developer</a></li>
+            <li><a class="dropdown-item" href="{{ route('showSWE_EngineerAvailable') }}">SWE Engineer</a></li>
+            <li><a class="dropdown-item" href="{{ route('showDatabase_AdministratorAvailable') }}">Database Administrator</a></li>
+            <li><a class="dropdown-item" href="{{ route('showHardware_SpacealistAvailable') }}">Hardware Spacealist</a></li>
+            <li><a class="dropdown-item" href="{{ route('showComputer_Hardware_EngineerAvailable') }}">Computer Hardware Engineer</a></li>
+            <li><a class="dropdown-item" href="{{ route('showWeb_DeveloperAvailable') }}">Web Developer</a></li>
           </ul>
         </div>
       </div>

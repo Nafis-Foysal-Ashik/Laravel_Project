@@ -13,6 +13,7 @@ use Session;
 class taskController extends Controller
 {
 
+    //goto to the admin page
     public function index()
     {
         $tasks = tasks::all();
@@ -20,6 +21,7 @@ class taskController extends Controller
         return view("admin.adminpage")->with($data);
     }
 
+    //store any kind of new tasks
     public function store(Request $request)
     {
         $request->validate(
@@ -46,18 +48,21 @@ class taskController extends Controller
         return redirect(route("homepage"));
     }
 
+    //delete user from the task
     public function delete($id)
     {
         tasks::find($id)->delete();
         return redirect(route("homepage"));
     }
 
+    //modify any user task
     public function edit($id)
     {
         $task=tasks::find($id);
         $data=compact('task');
         return view("admin.update")->with($data);
     }
+
 
     public function update(Request $request)
     {
@@ -86,6 +91,7 @@ class taskController extends Controller
         return redirect(route("homepage"));
     }
 
+    //show all the user tasks
     public function show()
 {
     $tasks = tasks::all(); // Retrieve all tasks from the database
@@ -93,7 +99,7 @@ class taskController extends Controller
     return view('show', compact('tasks')); // Pass tasks to the view
 }
 
-    //Auth
+    //login and register
 
     public function register()
     {
@@ -166,6 +172,7 @@ class taskController extends Controller
 
     }
 
+    //search task by typing name
     public function searchTasks(Request $request)
 {
     $search = $request->input('search');
@@ -175,6 +182,8 @@ class taskController extends Controller
 
     return view('admin.adminpage', compact('tasks'));
 }
+
+//showing all division wise tasks
 
     public function showKhulnaTasks()
 {
@@ -211,6 +220,7 @@ public function showChottogramTasks()
     return view('division.chottogram', compact('tasks')); // Pass tasks to the view
 }
 
+//showing the available user
 
 public function avaiableuser()
 {
@@ -227,7 +237,7 @@ public function showAvailable()
     {
         return view('available.available_register');
     }
-
+//store avaiable user
     public function storeAvailable(Request $request)
 {
     $validatedData = $request->validate([
@@ -278,7 +288,7 @@ public function deleteavailable($id)
     return redirect(route("available"));
 }
 
-//bookint section
+//booking section
 public function avaialablebooking()
 {
     $availables = Available::all();
@@ -296,6 +306,7 @@ public function message(Request $request)
     return redirect()->route('availablebookingPage');
 }
 
+//message section
 public function showMessages()
 {
     $messages = session('messages', []);
@@ -316,7 +327,7 @@ public function deleteMessage(Request $request)
 
     return response()->json(['success' => false]);
 }
-
+//division wise admin section
 public function showKhulnaAdmin()
 {
     $tasks = tasks::where('division', 'Khulna')->get(); // Retrieve tasks with division Khulna from the database
@@ -352,6 +363,8 @@ public function showRajshahiAdmin()
     return view('divadmin.rajshahiAdmin', compact('tasks'));
 }
 
+//division wise show avaiable user section
+
 public function showKhulnaAvailable()
 {
     $ava = Available::where('division', 'Khulna')->get(); // Retrieve tasks with division Khulna from the database
@@ -373,6 +386,8 @@ public function showRajshahiAvailable()
     return view('divAvaiable.rajshahiAvailable', compact('ava'));
 }
 
+
+
 public function showSylhetAvailable()
 {
     $ava = Available::where('division', 'Sylhet')->get(); // Retrieve tasks with division Khulna from the database
@@ -383,6 +398,43 @@ public function showSylhetAvailable()
 public function showChottogramAvailable()
 {
     $ava = Available::where('division', 'Chottogram')->get(); // Retrieve tasks with division Khulna from the database
+
+    return view('divAvaiable.chottogramAvailable', compact('ava'));
+}
+
+//category wise available user section
+
+public function showSWE_EngineerAvailable()
+{
+    $ava = Available::where('work', 'SWE Engineer')->get(); // Retrieve tasks with division Khulna from the database
+
+    return view('divAvaiable.chottogramAvailable', compact('ava'));
+}
+
+public function showDatabase_AdministratorAvailable()
+{
+    $ava = Available::where('work', 'Database Administrator')->get(); // Retrieve tasks with division Khulna from the database
+
+    return view('divAvaiable.chottogramAvailable', compact('ava'));
+}
+
+public function showHardware_SpacealistAvailable()
+{
+    $ava = Available::where('work', 'Hardware Spacealist')->get(); // Retrieve tasks with division Khulna from the database
+
+    return view('divAvaiable.chottogramAvailable', compact('ava'));
+}
+
+public function showComputer_Hardware_EngineerAvailable()
+{
+    $ava = Available::where('work', 'Computer Hardware Engineer')->get(); // Retrieve tasks with division Khulna from the database
+
+    return view('divAvaiable.chottogramAvailable', compact('ava'));
+}
+
+public function showWeb_DeveloperAvailable()
+{
+    $ava = Available::where('work', 'Web Developer')->get(); // Retrieve tasks with division Khulna from the database
 
     return view('divAvaiable.chottogramAvailable', compact('ava'));
 }

@@ -96,3 +96,12 @@ Route::get('/dhakaAvaiable', [taskController::class , 'showDhakaAvailable'])->na
 Route::get('/rajshahiAvaiable', [taskController::class, 'showRajshahiAvailable'])->name('rajshahiavaiable');
 Route::get('/sylhetAvaiable', [taskController::class, 'showSylhetAvailable'])->name('sylhetavaiable');
 Route::get('/chottogramAvaiable', [taskController::class, 'showChottogramAvailable'])->name('chottogramavaiable');
+
+//work category
+
+Route::get('/swe', [taskController::class, 'showSWE_EngineerAvailable'])->name('showSWE_EngineerAvailable');
+Route::get('/dbms', [taskController::class, 'showDatabase_AdministratorAvailable'])->name('showDatabase_AdministratorAvailable');
+Route::get('/hardware', [taskController::class, 'showHardware_SpacealistAvailable'])->name('showHardware_SpacealistAvailable');
+Route::get('/cse_eng', [taskController::class, 'showComputer_Hardware_EngineerAvailable'])->name('showComputer_Hardware_EngineerAvailable');
+Route::get('/web', [taskController::class, 'showWeb_DeveloperAvailable'])->name('showWeb_DeveloperAvailable');
+
