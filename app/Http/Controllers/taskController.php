@@ -152,7 +152,7 @@ class taskController extends Controller
        // Redirect to the appropriate page based on user type
         if ($user->type == "Customer") {
             $availables = Available::all();
-    return view('booking_employee', compact('availables'));
+    return view('available.booking_employee', compact('availables'));
         }
         if ($user->type == "Admin") {
             $tasks = tasks::all();
@@ -214,18 +214,18 @@ public function showChottogramTasks()
 
 public function avaiableuser()
 {
-    return view('available');
+    return view('available.available');
 }
 
 public function showAvailable()
     {
         $availables = Available::all();
-        return view('available', compact('availables'));
+        return view('available.available', compact('availables'));
     }
 
     public function avaialable()
     {
-        return view('available_register');
+        return view('available.available_register');
     }
 
     public function storeAvailable(Request $request)
@@ -267,7 +267,7 @@ public function showAvailable()
 {
     $available = Available::find($id); // Correctly reference the model class
     $data = compact('available');
-    return view("updateavailable")->with($data);
+    return view("available.updateavailable")->with($data);
 }
 
 
@@ -282,7 +282,7 @@ public function deleteavailable($id)
 public function avaialablebooking()
 {
     $availables = Available::all();
-    return view('booking_employee', compact('availables'));
+    return view('available.booking_employee', compact('availables'));
 }
 
 public function message(Request $request)
@@ -299,7 +299,7 @@ public function message(Request $request)
 public function showMessages()
 {
     $messages = session('messages', []);
-    return view('message', compact('messages'));
+    return view('message.message', compact('messages'));
 }
 
 
