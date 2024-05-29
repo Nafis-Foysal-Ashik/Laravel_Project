@@ -92,3 +92,4 @@ Route::get('/rajshahiadmin', [taskController::class , 'showRajshahiAdmin'])->nam
 
 //avaiable division
 Route::get('/khulnaAvaiable', [taskController::class , 'showKhulnaAvailable'])->name("khulnaavaiable");
+Route::get('/dhakaAvaiable', [taskController::class , 'showDhakaAvailable'])->name("dhakaavaiable");
