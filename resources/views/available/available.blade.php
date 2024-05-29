@@ -36,12 +36,6 @@
     <div class="container my-5">
         <h1 class="mb-4 text-center">Available Employee Information</h1>
 
-        {{-- @if (session('name') && session('email'))
-        <div class="alert alert-info" role="alert">
-            New booking request from {{ session('name') }} ({{ session('email') }}).
-        </div>
-    @endif --}}
-
         @if (session('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session('success') }}
@@ -50,8 +44,17 @@
         @endif
 
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h7 class="display-6 mb-0">Showing available user</h7>  <a href="{{ route('homepage') }}" class="btn btn-primary">Back</a>
-          </div>
+            <h7 class="display-6 mb-0">Showing available user</h7>
+            <a href="{{ route('homepage') }}" class="btn btn-primary">Back</a>
+        </div>
+
+        <!-- Search Form -->
+        <form action="{{ route('searchAvailable') }}" method="GET" class="mb-4">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Search available user by name" value="{{ request()->query('search') }}">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+            </div>
+        </form>
 
         @if (count($availables) > 0)
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">

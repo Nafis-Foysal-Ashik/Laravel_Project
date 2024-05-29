@@ -439,4 +439,14 @@ public function showWeb_DeveloperAvailable()
     return view('divAvaiable.chottogramAvailable', compact('ava'));
 }
 
+public function searchAvailable(Request $request)
+    {
+        $search = $request->input('search');
+
+        // Query to search available users by name
+        $availables = Available::where('fullname', 'like', '%' . $search . '%')->get();
+
+        return view('available.available', compact('availables'));
+    }
+
 }

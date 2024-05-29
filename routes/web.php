@@ -105,3 +105,4 @@ Route::get('/hardware', [taskController::class, 'showHardware_SpacealistAvailabl
 Route::get('/cse_eng', [taskController::class, 'showComputer_Hardware_EngineerAvailable'])->name('showComputer_Hardware_EngineerAvailable');
 Route::get('/web', [taskController::class, 'showWeb_DeveloperAvailable'])->name('showWeb_DeveloperAvailable');
 
+Route::get('/searchAvailable', [taskController::class, 'searchAvailable'])->name('searchAvailable');
